@@ -1,0 +1,40 @@
+{
+    "devDependencies": {
+        "@babel/core": "^7.13.10",
+        "@babel/preset-env": "^7.14.4",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.2.2",
+        "babel-preset-env": "^1.7.0",
+        "browser-sync": "^2.26.14",
+        "del": "^6.0.0",
+        "eslint": "^7.28.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-cssbeautify": "^3.0.0",
+        "gulp-htmlmin-next": "^6.0.1",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-notify": "^3.2.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-webp": "^4.0.1",
+        "panini": "^1.7.1",
+        "webpack": "^5.38.1",
+        "webpack-stream": "^6.1.2"
+    },
+    "browserslist": [
+        "last 5 version",
+        "> 1%"
+    ],
+    "dependencies": {
+        "swiper": "^6.7.0",
+        "rellax": "^1.12.1",
+        "simplebar": "^5.3.3",
+        "textfit": "^2.4.0",
+        "animate.css": "^4.1.1",
+        "wow.js": "^1.2.2"
+    }
+}

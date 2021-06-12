@@ -1,0 +1,27 @@
+main {
+    margin: 0 auto;
+    max-width: 1920px;
+    overflow: hidden;
+}
+
+.container,
+.containerFluid {
+    padding: 0 30px;
+    max-width: 1600px;
+
+    @media screen and (max-width: $tableWidth) {
+        padding: 0 15px;
+    }
+}
+
+.container {
+    margin: 0 auto;
+}
+
+section {
+    margin: 160px 0;
+
+    @media screen and (max-width: $desktopWidth) {
+        margin: 140px 0;
+    }
+}
