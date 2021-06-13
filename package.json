@@ -30,11 +30,6 @@
         "> 1%"
     ],
     "dependencies": {
-        "swiper": "^6.7.0",
-        "rellax": "^1.12.1",
-        "simplebar": "^5.3.3",
-        "textfit": "^2.4.0",
-        "animate.css": "^4.1.1",
-        "wow.js": "^1.2.2"
+        "hamburgers": "^1.1.3"
     }
 }

@@ -1,0 +1,23 @@
+html {
+    line-height: 1.5;
+    font-size: 16px;
+    color: $text;
+}
+
+body {
+    @extend %fontRegular;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $text;
+
+    background-color: $white;
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button {
+    @extend %btn-reset;
+}

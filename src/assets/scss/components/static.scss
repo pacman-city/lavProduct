@@ -7,18 +7,18 @@ main {
 .container,
 .containerFluid {
     padding: 0 30px;
-    max-width: 1600px;
 
-    @media screen and (max-width: $tableWidth) {
-        padding: 0 15px;
-    }
+    // @media screen and (max-width: $tableWidth) {
+    //     padding: 0 15px;
+    // }
 }
 
 .container {
+    max-width: 1360px;
     margin: 0 auto;
 }
 
-section {
+.section {
     margin: 160px 0;
 
     @media screen and (max-width: $desktopWidth) {

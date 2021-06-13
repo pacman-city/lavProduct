@@ -1,0 +1,27 @@
+.numerals {
+
+    margin-top: 292px;
+
+    &__wrapper {
+        max-width: 1224px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__col {
+        max-width: 250px;
+    }
+
+    h2 {
+        @extend %fontBold;
+        font-size: 57px;
+        color: $accentColor1;
+        white-space: nowrap;
+    }
+
+    p {
+        width: auto;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+}

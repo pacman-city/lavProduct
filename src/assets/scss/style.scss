@@ -1,23 +1,36 @@
+// @import 'swiper/swiper-bundle';
+
+
+/* Page setups */
 @import './utils/01reset';
-@import './utils/02vars';
-@import './utils/03mixins';
-@import './utils/04fonts';
-@import './utils/05pagePresets';
-@import './utils/06typography';
+@import './utils/02vars_mixins';
+@import './utils/03fonts';
+@import './utils/04pagePresets';
 
 
-@import 'swiper/swiper-bundle';
-@import 'simplebar/dist/simplebar';
+/* components */
+@import './components/static';
+@import './components/interactive';
+@import './components/hamburger';
+@import './components/btn-solid';
+
 
 
 /* SubBlocks & page elements */
-@import "./subBlocks/01elementsStatic.scss";
-@import "./subBlocks/02elementsInteractive.scss";
-@import "./subBlocks/03headerMenu.scss";
-@import "./subBlocks/04modalCallback.scss";
-
+@import "./subBlocks/01modal.scss";
 
 
 /* Blocks */
-@import "blocks/00header.scss";
-@import "./blocks/01intro.scss";
+@import "./blocks/01header.scss";
+@import "./blocks/02intro.scss";
+@import "./blocks/03numerals.scss";
+@import "./blocks/04catalog.scss";
+@import "./blocks/05license.scss";
+@import "./blocks/06collaboration.scss";
+@import "./blocks/07assurance.scss";
+@import "./blocks/08benefits.scss";
+@import "./blocks/09formCollab.scss";
+@import "./blocks/10partners.scss";
+@import "./blocks/11faq.scss";
+@import "./blocks/12requisites.scss";
+@import "./blocks/13footer.scss";

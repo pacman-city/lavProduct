@@ -1,0 +1,31 @@
+.intro {
+
+    .container {
+        display: flex;
+    }
+
+    h1 {
+        margin-top: 111px;
+
+        @extend %fontBold;
+        font-size: 54px;
+        line-height: 1.1;
+    }
+
+    p {
+        margin-top: 35px;
+        font-size: 26px;
+    }
+
+    button {
+        margin-top: 80px;
+        width: 425px;
+        height: 60px;
+    }
+
+    .intro__image {
+        margin-left: 120px;
+        width: 0;
+        flex-grow: 1;
+    }
+}

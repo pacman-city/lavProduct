@@ -1,0 +1,9 @@
+.btn-solid {
+
+    border-radius: 3px;
+    background-color: $accentColor1;
+
+    @extend %fontBold;
+    font-size: 20px;
+    color: $white;
+}
