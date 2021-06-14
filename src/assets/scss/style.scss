@@ -1,6 +1,3 @@
-// @import 'swiper/swiper-bundle';
-
-
 /* Page setups */
 @import './utils/01reset';
 @import './utils/02vars_mixins';
@@ -9,8 +6,6 @@
 
 
 /* components */
-@import './components/static';
-@import './components/interactive';
 @import './components/hamburger';
 @import './components/btn-solid';
 

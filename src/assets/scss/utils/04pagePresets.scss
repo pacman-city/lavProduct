@@ -21,3 +21,30 @@ a,
 button {
     @extend %btn-reset;
 }
+
+main {
+    margin: 0 auto;
+    max-width: 1920px;
+}
+
+.container,
+.containerFluid {
+    padding: 0 30px;
+
+    @media screen and (max-width: $phoneWidth) {
+        padding: 0 15px;
+    }
+}
+
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.section {
+    margin: 160px 0;
+
+    @media screen and (max-width: $desktopWidth) {
+        margin: 140px 0;
+    }
+}

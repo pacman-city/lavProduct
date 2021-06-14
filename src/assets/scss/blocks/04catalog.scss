@@ -1,14 +1,15 @@
 .catalog {
 
-
-    margin-top: 200px;
+    margin-top: 130px;
 
     &__header {
         display: flex;
 
-
+        margin-bottom: 55px;
 
         p {
+            margin-top: 100px;
+
             font-size: 20px;
             line-height: 1.7;
         }
@@ -17,13 +18,107 @@
     &__title {
         flex-shrink: 0;
         width: 660px;
-        outline: 1px solid red;
+        height: 371px;
+
+        transform: translateX(-135px);
+
+        background: no-repeat center/ contain url(../images/temp2.png);
 
         h2 {
+            margin-top: 110px;
+            margin-left: 120px;
+
             @extend %fontMavka;
             font-size: 70px;
             color: $accentColor2;
+            line-height: 0.9;
             transform: rotate(-10deg);
+
+            div:last-child() {
+                margin-left: 70px;
+            }
         }
     }
+}
+
+
+.subCatalog {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    h3 {
+        position: sticky;
+        top: 0;
+
+        @extend %fontBold;
+
+        span {
+            font-size: 18px;
+        }
+
+        div {
+            font-size: 40px;
+        }
+    }
+
+    p {
+        position: sticky;
+        top: 150px;
+        // height: 500px;
+        // margin-bottom: 700px;
+    }
+
+    .ttt {
+        // -webkit-mask-image: linear-gradient(#fff 300px, #fff0 50%);
+
+        outline-offset: -10px;
+        height: 500px;
+        // background: no-repeat center/cover url(../images/background/catalogTop.jpg);
+        outline: 1px solid black;
+    }
+
+    &__content {
+        width: 392px;
+        // outline: 1px solid red;
+        // -webkit-mask-image: linear-gradient(#fff 70%, #fff0 90%);
+
+        &::before {
+            content: '';
+            background: $accentColor3;
+            display: block;
+            position: absolute;
+            // top: 0;
+            width: 50%;
+            right: 50%;
+            height: 500px;
+            outline: 1px solid green;
+
+        }
+    }
+
+    // &__img {
+    //     width: 850px;
+    //     height: 449px;
+    //     background: no-repeat center/cover url(../images/background/catalogTop.jpg);
+    // }
+
+}
+
+.product {
+
+    width: 850px;
+    flex-shrink: 0;
+    height: 2000px;
+    outline: 1px solid green;
+}
+
+.catalog .container {
+    outline: 1px solid red;
+}
+
+main {
+    max-width: 1920px;
+    outline: 1px solid red;
+    position: relative;
 }

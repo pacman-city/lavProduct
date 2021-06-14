@@ -1,4 +1,6 @@
 .header {
+    position: absolute;
+    width: 100%;
 
     .container {
         height: 113px;
@@ -27,10 +29,15 @@
             font-size: 18px;
             color: $black;
 
-            transition: all 0.1s linear;
+            transition: all 0.1s ease-out;
 
             &:hover {
                 background: $accentColor3;
+            }
+
+            &:active {
+                background: $accentColor1;
+                color: $white;
             }
         }
     }
@@ -64,12 +71,15 @@
     }
 
     @media screen and (max-width: $desktopWidth) {
-        position: relative;
+
+        .container {
+            position: relative;
+        }
 
         .hamburger {
+            align-self: flex-start;
             display: block;
-            margin: 0 30px 0 80px;
-            padding-top: 20px;
+            margin-left: 50px;
         }
 
         &__menu {
@@ -77,14 +87,37 @@
             width: 100%;
             top: 113px;
             left: 0;
+            padding-top: 30px;
 
             flex-direction: column;
 
-            display: none;
+            transform: translateY(300px) scale(1.5);
+
+            visibility: hidden;
+            transition: transform 0.5s linear;
 
             a {
+                color: transparent;
                 width: 95%;
             }
+        }
+    }
+}
+
+//temp:
+.header.menu-open {
+    background: $accentColor3;
+
+    .header__menu {
+        transform: translate(0);
+        visibility: visible;
+        background: $accentColor3;
+
+        transition: transform 0.3s linear, background-color 0.2s linear 0.1s;
+
+        a {
+            transition: color 0.1s linear 0.2s;
+            color: $black;
         }
     }
 }
