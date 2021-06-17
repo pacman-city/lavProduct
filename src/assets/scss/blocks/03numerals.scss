@@ -1,15 +1,12 @@
 .numerals {
 
-    margin-top: 292px;
+    margin-top: 122px;
 
     &__wrapper {
-        max-width: 1224px;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__col {
-        max-width: 250px;
+        max-width: 1200px;
+        display: grid;
+        justify-content: space-around;
+        grid-template-columns: repeat(4, 225px);
     }
 
     h2 {
@@ -20,8 +17,48 @@
     }
 
     p {
-        width: auto;
         font-size: 20px;
         line-height: 1.4;
+        display: inline-block;
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        &__wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 42px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        &__wrapper {
+            max-width: 720px;
+            grid-template: repeat(2, 1fr) / repeat(2, 225px);
+            grid-row-gap: 20px;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__wrapper {
+            max-width: 520px;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        &__wrapper {
+            max-width: 420px;
+            grid-template: repeat(4, auto) / 1fr;
+        }
     }
 }

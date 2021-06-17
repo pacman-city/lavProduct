@@ -2,6 +2,7 @@
     position: absolute;
     width: 100%;
 
+
     .container {
         height: 113px;
         padding-top: 20px;
@@ -15,7 +16,6 @@
         margin-right: 50px;
         margin-left: -8px;
         font-size: 85px;
-        color: $accentColor1;
     }
 
     &__menu {
@@ -102,6 +102,36 @@
             }
         }
     }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__logo {
+            padding: 0;
+            margin: -15px 10px 0 0;
+            font-size: 65px;
+        }
+
+        &__phone a {
+            span {
+                font-size: 25px;
+            }
+
+            div {
+                line-height: 1.5;
+                font-size: 14px;
+            }
+        }
+
+        .hamburger {
+            margin-left: 20px;
+        }
+    }
+
+
+}
+
+
+.header {
+    overflow: hidden;
 }
 
 //temp:

@@ -1,11 +1,20 @@
-.catalog {
+// catalog{
+//         catalog__title{...}
+//
+//          department{
+//                     card{...}  ! -----------------> sub-blocks
+//                     card{...}
+//                     }
+//
+// -------- 2 more departments...
+//         }
 
+.catalog {
     margin-top: 130px;
 
     &__header {
-        display: flex;
-
         margin-bottom: 55px;
+        display: flex;
 
         p {
             margin-top: 100px;
@@ -41,84 +50,91 @@
     }
 }
 
+//--------------------------------------------------------------------//
+.department {
+    padding-right: 10px;
+    padding-top: 50px;
+    position: relative;
 
-.subCatalog {
+    &__title {
+        width: 40%;
+        height: 100%;
 
-    display: flex;
-    flex-wrap: wrap;
-
-    h3 {
-        position: sticky;
+        position: absolute;
         top: 0;
+        left: 0;
 
-        @extend %fontBold;
+        h3 {
+            margin-top: 48px;
 
-        span {
-            font-size: 18px;
+            @extend %fontBold;
+
+            position: sticky;
+            top: 0;
+
+            span {
+                font-size: 18px;
+            }
+
+            div {
+                font-size: 40px;
+                line-height: 1.3;
+            }
         }
 
-        div {
-            font-size: 40px;
+        p {
+            width: 385px;
+            margin-top: 30px;
+
+            line-height: 1.7;
+
+            position: sticky;
+            top: 160px;
         }
-    }
-
-    p {
-        position: sticky;
-        top: 150px;
-        // height: 500px;
-        // margin-bottom: 700px;
-    }
-
-    .ttt {
-        // -webkit-mask-image: linear-gradient(#fff 300px, #fff0 50%);
-
-        outline-offset: -10px;
-        height: 500px;
-        // background: no-repeat center/cover url(../images/background/catalogTop.jpg);
-        outline: 1px solid black;
-    }
-
-    &__content {
-        width: 392px;
-        // outline: 1px solid red;
-        // -webkit-mask-image: linear-gradient(#fff 70%, #fff0 90%);
 
         &::before {
             content: '';
-            background: $accentColor3;
-            display: block;
-            position: absolute;
-            // top: 0;
-            width: 50%;
-            right: 50%;
-            height: 500px;
-            outline: 1px solid green;
+            width: 830px;
+            height: 450px;
 
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            background: $accentColor3;
         }
     }
 
-    // &__img {
-    //     width: 850px;
-    //     height: 449px;
-    //     background: no-repeat center/cover url(../images/background/catalogTop.jpg);
-    // }
+    &__container {
+        height: 50%;
+        -webkit-mask-image: linear-gradient(#000 240px, #0000 240px);
+        mask-image: linear-gradient(#000 240px, #0000 240px);
+    }
 
-}
+    &__cards {
+        width: 850px;
+        height: 2000px; //////////////////////////////////////////////////////////////
+        margin-left: auto;
 
-.product {
+        background: green;
+    }
 
-    width: 850px;
-    flex-shrink: 0;
-    height: 2000px;
-    outline: 1px solid green;
-}
+    @media screen and (max-width: $desktopWidth) {
+        &__title {
+            width: 520px;
+            // width: 450px;
+            position: relative;
 
-.catalog .container {
-    outline: 1px solid red;
-}
+            h3,
+            p {
+                position: relative;
+                top: unset;
+                mask-image: unset;
+            }
+        }
 
-main {
-    max-width: 1920px;
-    outline: 1px solid red;
-    position: relative;
+        &__cards {
+            margin: 0 auto;
+        }
+    }
 }

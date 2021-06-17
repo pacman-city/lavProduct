@@ -56,13 +56,13 @@
 
 .icon-logo:before {
     content: "\e900";
-    color: #3521c1;
+    color: $accentColor1;
 }
 
 .icon-inSquare:after {
     content: "\e901";
     display: inline-block;
-    color: #3521c1;
+    color: $accentColor1;
     font-size: 20px;
     margin-bottom: 18px;
     margin-left: 2px;

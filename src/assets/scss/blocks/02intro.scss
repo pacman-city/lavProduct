@@ -36,7 +36,8 @@
     }
 
     @media screen and (max-width: $desktopWidth) {
-        height: 750px;
+        max-height: 100vh;
+        min-height: 750px;
         padding-top: 115px;
 
         h1 {
