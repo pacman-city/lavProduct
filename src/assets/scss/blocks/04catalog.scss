@@ -52,8 +52,6 @@
 
 //--------------------------------------------------------------------//
 .department {
-    padding-right: 10px;
-    padding-top: 50px;
     position: relative;
 
     &__title {
@@ -113,10 +111,14 @@
 
     &__cards {
         width: 850px;
-        height: 2000px; //////////////////////////////////////////////////////////////
         margin-left: auto;
+        padding-top: 500px;
 
-        background: green;
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        grid-gap: 30px;
+
+        background: no-repeat top 50px center/100% url(../images/background/catalogTop.jpg);
     }
 
     @media screen and (max-width: $desktopWidth) {
