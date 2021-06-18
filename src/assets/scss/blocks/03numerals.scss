@@ -10,9 +10,7 @@
     }
 
     h2 {
-        @extend %fontBold;
-        font-size: 57px;
-        color: $accentColor1;
+        @extend %bold57;
         white-space: nowrap;
     }
 

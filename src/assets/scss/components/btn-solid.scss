@@ -3,7 +3,6 @@
     border-radius: 3px;
     background-color: $accentColor1;
 
-    @extend %fontBold;
-    font-size: 20px;
+    @extend %bold20;
     color: $white;
 }

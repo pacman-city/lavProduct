@@ -37,7 +37,7 @@
             margin-top: 110px;
             margin-left: 120px;
 
-            @extend %fontMavka;
+            @extend %mavka70;
             font-size: 70px;
             color: $accentColor2;
             line-height: 0.9;
@@ -65,17 +65,15 @@
         h3 {
             margin-top: 48px;
 
-            @extend %fontBold;
-
             position: sticky;
             top: 0;
 
             span {
-                font-size: 18px;
+                @extend %bold18;
             }
 
             div {
-                font-size: 40px;
+                @extend %bold40;
                 line-height: 1.3;
             }
         }

@@ -5,8 +5,9 @@ html {
 }
 
 body {
-    @extend %fontRegular;
+    font-family: 'Bellotta Text', sans-serif;
     font-size: 16px;
+    font-style: normal;
     line-height: 1.5;
     color: $text;
 

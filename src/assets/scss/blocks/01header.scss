@@ -2,7 +2,6 @@
     position: absolute;
     width: 100%;
 
-
     .container {
         height: 113px;
         padding-top: 20px;
@@ -25,9 +24,7 @@
         a {
             padding: 18px;
 
-            @extend %fontBold;
-            font-size: 18px;
-            color: $black;
+            @extend %bold18;
 
             transition: all 0.1s ease-out;
 
@@ -52,14 +49,11 @@
             padding: 4px 8px;
 
             span {
-                @extend %fontRegular;
-                font-size: 28px;
-                color: $black;
+                @extend %bold28;
             }
 
             div {
-                @extend %fontBold;
-                color: $accentColor1;
+                @extend %bold16;
                 text-align: right;
                 line-height: 2.3;
             }

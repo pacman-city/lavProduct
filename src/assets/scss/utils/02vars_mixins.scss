@@ -56,29 +56,71 @@ $smPhoneWidth : 575.98px;
     }
 }
 
-// ---------------------------------------------------------------- FONTS
-%fontRegular {
-    font-family: 'Bellotta Text', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-%fontBold {
-    font-family: 'Bellotta Text', sans-serif;
+// ---------------------------------------------------------------- FONTS bold
+%bold16 {
+    font-size: 16px;
     font-weight: 700;
-    font-style: normal;
+    color: $accentColor1;
 }
 
-%fontMavka {
+%bold18 {
+    font-size: 18px;
+    font-weight: 700;
+    color: $black;
+}
+
+%bold20 {
+    font-size: 20px;
+    font-weight: 700;
+    color: $text;
+}
+
+%bold24 {
+    font-size: 24px;
+    font-weight: 700;
+    color: $black;
+}
+
+%bold28 {
+    font-size: 24px;
+    font-weight: 700;
+    color: $black;
+}
+
+%bold40 {
+    font-size: 40px;
+    font-weight: 700;
+    color: $black;
+}
+
+%bold54 {
+    font-size: 54px;
+    font-weight: 700;
+    color: $black;
+}
+
+%bold57 {
+    font-size: 57px;
+    font-weight: 700;
+    color: $accentColor1;
+}
+
+// ---------------------------------------------------------------- FONTS regular
+%regular18 {
+    font-size: 18px;
+    font-weight: 400;
+    color: $textDimmed;
+}
+
+// ---------------------------------------------------------------- FONTS mavka
+%mavka36 {
+    font-size: 36px;
     font-family: 'Sweet Mavka Script', sans-serif;
     font-weight: 500;
-    font-style: normal;
 }
 
-
-
-
-%test {
-    outline: 1px solid red;
-    outline-offset: -5px;
+%mavka70 {
+    font-size: 57px;
+    font-family: 'Sweet Mavka Script', sans-serif;
+    font-weight: 500;
 }

@@ -11,8 +11,7 @@
     h1 {
         margin-top: 75px;
 
-        @extend %fontBold;
-        font-size: 54px;
+        @extend %bold54;
         line-height: 1.1;
     }
 

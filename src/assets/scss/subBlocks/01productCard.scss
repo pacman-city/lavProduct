@@ -55,8 +55,7 @@
     }
 
     h3 {
-        @extend %fontBold;
-        font-size: 24px;
+        @extend %bold24;
         margin-left: 25px;
     }
 
@@ -64,9 +63,7 @@
         margin-top: 10px;
         margin-left: 25px;
 
-        @extend %fontRegular;
-        font-size: 18px;
-        color: $textDimmed;
+        @extend %regular18;
         line-height: 1.4;
     }
 
@@ -78,9 +75,7 @@
 
         b {
             display: block;
-            @extend %fontBold;
-            color: $text;
-            font-size: 20px;
+            @extend %bold20;
         }
     }
 
