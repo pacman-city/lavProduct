@@ -16,15 +16,6 @@ $smPhoneWidth : 575.98px;
 // $phoneWidth : 480px;
 // $smPhoneWidth : 320px;
 
-// breakpoints
-// $desktopWidth : 1280px;
-// $smDesktopWidth : 1024px;
-// $tableWidth : 768px;
-// $smTableWidth : 640px;
-// $phoneWidth : 480px;
-// $smPhoneWidth : 320px;
-
-
 %no-select {
     // ---------------------------------------------------------------- no select
     user-select: none;
@@ -82,7 +73,7 @@ $smPhoneWidth : 575.98px;
 }
 
 %bold28 {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: $black;
 }
@@ -120,7 +111,9 @@ $smPhoneWidth : 575.98px;
 }
 
 %mavka70 {
-    font-size: 57px;
+    font-size: 70px;
     font-family: 'Sweet Mavka Script', sans-serif;
     font-weight: 500;
+    color: $accentColor2;
+    line-height: 0.9;
 }

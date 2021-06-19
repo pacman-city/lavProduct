@@ -1,0 +1,123 @@
+.department {
+    margin-top: 200px;
+    position: relative;
+
+    &__title {
+        width: 520px;
+        height: 100%;
+
+        position: absolute;
+        top: -50px;
+        left: 0;
+
+        padding-top: 48px;
+
+        h3 {
+            position: sticky;
+            top: 80px;
+
+            span {
+                @extend %bold18;
+            }
+
+            div {
+                @extend %bold40;
+                line-height: 1.3;
+                max-width: 385px;
+            }
+        }
+
+        p {
+            width: 385px;
+            margin-top: 30px;
+
+            line-height: 1.7;
+
+            position: sticky;
+            top: 240px;
+        }
+
+        &::before {
+            content: '';
+            width: 830px;
+            height: 450px;
+
+            position: absolute;
+            top: 0;
+            right: -15px;
+
+            background: $accentColor3;
+        }
+    }
+
+    &__container {
+        height: 50%;
+        -webkit-mask-image: linear-gradient(#000 240px, #0000 240px);
+        mask-image: linear-gradient(#000 240px, #0000 240px);
+    }
+
+    &__cards {
+        max-width: 850px;
+        margin-left: auto;
+        padding-top: 450px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+
+        background: no-repeat top center/100% url(../images/background/catalogTop.jpg);
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        margin-top: 0;
+
+        &__title {
+            position: relative;
+            top: 50px;
+
+            h3,
+            p {
+                position: relative;
+                top: unset;
+                mask-image: unset;
+            }
+        }
+
+        &__cards {
+            margin: 0 auto;
+        }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        &__cards {
+            max-width: 690px;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__title {
+            width: 100%;
+
+            p {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            h3 div {
+                max-width: unset;
+            }
+
+            &:before {
+                height: 120%;
+            }
+        }
+
+        &__cards {
+            padding-top: 150px;
+            background: none;
+
+            grid-template-columns: minmax(auto, 460px);
+            justify-content: center;
+        }
+    }
+}

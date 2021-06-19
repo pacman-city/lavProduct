@@ -1,11 +1,11 @@
 .numerals {
 
-    margin-top: 122px;
+    margin-top: 105px;
 
     &__wrapper {
-        max-width: 1200px;
+        max-width: 1215px;
         display: grid;
-        justify-content: space-around;
+        justify-content: space-between;
         grid-template-columns: repeat(4, 225px);
     }
 
@@ -15,6 +15,7 @@
     }
 
     p {
+        margin-top: 10px;
         font-size: 20px;
         line-height: 1.4;
         display: inline-block;
@@ -24,6 +25,7 @@
         &__wrapper {
             max-width: 900px;
             margin: 0 auto;
+            justify-items: space-around;
         }
 
         h2 {
