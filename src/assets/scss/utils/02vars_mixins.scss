@@ -6,7 +6,7 @@ $textDimmed: #998E88;
 
 $accentColor1: #3521C1;
 $accentColor2: #E3A156;
-$accentColor3: #FBF6EF;
+$accentColor3: #FAF6EF;
 
 // breakpoints
 $desktopWidth : 1199.98px;
@@ -74,6 +74,12 @@ $smPhoneWidth : 575.98px;
 
 %bold28 {
     font-size: 28px;
+    font-weight: 700;
+    color: $black;
+}
+
+%bold36 {
+    font-size: 36px;
     font-weight: 700;
     color: $black;
 }

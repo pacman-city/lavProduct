@@ -20,7 +20,7 @@
             position: absolute;
             right: 20px;
             top: 7px;
-            color: #EEB168;
+            color: $accentColor2;
             visibility: hidden;
             opacity: 0;
             transition: none;
@@ -33,12 +33,12 @@
             transition: transform 0.5s cubic-bezier(.2, .6, 0, .83), opacity 0.3s ease-in;
         }
 
-        button {
+        a {
             margin-left: auto;
             border-radius: 50%;
 
             &:hover {
-                background-color: #EEB168;
+                background-color: $accentColor2;
                 transition: background-color 0.4s ease-in-out;
                 color: $white;
 

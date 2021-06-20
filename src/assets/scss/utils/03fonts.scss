@@ -73,14 +73,14 @@
 
     &::before {
         content: "\e902";
-        color: #EEB168;
+        color: $accentColor2;
         font-size: 38px;
     }
 
     &::after {
         content: "\e903";
         margin-left: -1em;
-        color: #EEB168;
+        color: $accentColor2;
         font-size: 38px;
     }
 }
