@@ -72,6 +72,12 @@ $smPhoneWidth : 575.98px;
     color: $black;
 }
 
+%bold26 {
+    font-size: 26px;
+    font-weight: 700;
+    color: $black;
+}
+
 %bold28 {
     font-size: 28px;
     font-weight: 700;
@@ -88,6 +94,14 @@ $smPhoneWidth : 575.98px;
     font-size: 40px;
     font-weight: 700;
     color: $black;
+}
+
+%bold46 {
+    font-size: 46px;
+    font-weight: 700;
+    color: $black;
+    max-width: 510px;
+    line-height: 1.1;
 }
 
 %bold54 {
@@ -110,6 +124,13 @@ $smPhoneWidth : 575.98px;
 }
 
 // ---------------------------------------------------------------- FONTS mavka
+%mavka20 {
+    font-size: 20px;
+    font-family: 'Sweet Mavka Script', sans-serif;
+    font-weight: 500;
+    color: $accentColor1;
+}
+
 %mavka36 {
     font-size: 36px;
     font-family: 'Sweet Mavka Script', sans-serif;

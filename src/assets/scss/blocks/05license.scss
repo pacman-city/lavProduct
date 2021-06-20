@@ -39,7 +39,7 @@
     @media screen and (max-width: $desktopWidth) {
         &__image {
             top: 35px;
-            right: 120px;
+            right: 140px;
             width: auto;
             background: none;
         }
@@ -47,6 +47,12 @@
         img {
             width: 220px;
             margin: 0;
+        }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        &__image {
+            display: none;
         }
     }
 }

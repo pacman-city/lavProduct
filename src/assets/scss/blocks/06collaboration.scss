@@ -1,0 +1,42 @@
+.collaboration {
+    margin-top: 100px;
+
+    h2 {
+        @extend %bold46;
+    }
+
+    &__cards {
+        margin-top: 80px;
+        max-width: 1220px;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(3, 335px);
+    }
+
+    .card {
+        width: 335px;
+    }
+
+    span {
+        @extend %mavka20;
+    }
+
+    img {
+        height: 95px;
+        width: auto;
+        margin-top: 20px;
+    }
+
+    p {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    button {
+        margin-top: 28px;
+        padding: 15px 20px;
+        background-color: #FBE3C9;
+        color: $accentColor1;
+        font-size: 18px;
+    }
+}

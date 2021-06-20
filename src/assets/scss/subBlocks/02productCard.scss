@@ -62,6 +62,7 @@
     &__text {
         margin-top: 10px;
         margin-left: 25px;
+        flex-grow: 1;
 
         @extend %regular18;
         line-height: 1.4;
