@@ -93,3 +93,279 @@
     color: $accentColor1;
     font-weight: 900;
 }
+
+//----------------------------------------colab1
+.icon-colab1 {
+    font-size: 95px;
+
+    &::before {
+        content: "\e905";
+        color: rgb(251, 227, 201);
+    }
+
+    &::after {
+        content: "\e906";
+        margin-left: -1em;
+        color: rgb(53, 33, 193);
+    }
+
+    span::after {
+        font-family: 'icomoon';
+        content: "\e907";
+        margin-left: -1em;
+        color: rgb(238, 177, 104);
+    }
+}
+
+.icon-colab11::before {
+    content: "\e908";
+    color: #eeb168;
+    font-size: 95px;
+}
+
+//----------------------------------------colab2
+.icon-colab2 {
+    font-size: 95px;
+
+    &::before {
+        content: "\e909";
+        color: #fbe3c9;
+    }
+
+    &::after {
+        content: "\e90a";
+        color: #3521c1;
+        margin-left: -1em;
+    }
+
+    span::after {
+        font-family: 'icomoon';
+        content: "\e90b";
+        color: #eeb168;
+        margin-left: -1em;
+    }
+}
+
+.icon-colab21:before {
+    content: "\e90d";
+    color: #eeb168;
+    font-size: 95px;
+}
+
+//----------------------------------------colab3
+.icon-colab3 {
+    font-size: 95px;
+
+    &::before {
+        content: "\e90c";
+        color: #fbe3c9;
+    }
+
+    &::after {
+        content: "\e90e";
+        color: #3521c1;
+        margin-left: -1em;
+    }
+
+    span::after {
+        font-family: 'icomoon';
+        content: "\e90f";
+        color: #eeb168;
+        margin-left: -1em;
+    }
+}
+
+.icon-colab31:before {
+    content: "\e911";
+    color: #eeb168;
+    font-size: 95px;
+}
+
+//----------------------------------------assurance1
+.icon-assurance1 {
+    font-size: 80px;
+
+    &::before {
+        content: "\e910";
+        color: #fbe3c9;
+    }
+
+    &::after {
+        content: "\e912";
+        color: #3521c1;
+        margin-left: -1em;
+    }
+}
+
+//----------------------------------------assurance2
+.icon-assurance2 {
+    font-size: 80px;
+
+    &::before {
+        content: "\e913";
+        color: #fbe3c9;
+    }
+
+    &::after {
+        content: "\e914";
+        color: #3521c1;
+        margin-left: -1em;
+    }
+}
+
+//----------------------------------------assurance3
+.icon-assurance3 {
+    font-size: 80px;
+
+    &::before {
+        content: "\e915";
+        color: #fbe3c9;
+    }
+
+    &::after {
+        content: "\e916";
+        color: #3521c1;
+        margin-left: -1em;
+    }
+}
+
+//----------------------------------------socials
+.icon-instagram:before {
+    content: "\e917";
+    color: #3521c1;
+}
+
+.icon-facebook:before {
+    content: "\e918";
+    color: #3521c1;
+}
+
+.icon-vkontakte::before {
+    content: "\e919";
+    color: #3521c1;
+}
+
+//----------------------------------------checked
+.icon-checked::before {
+    content: "\e91a";
+    color: #61c878;
+    font-size: 73px;
+}
+
+//----------------------------------------map-pin
+.icon-map-pin {
+    font-size: 98px;
+
+    &::before {
+        content: "\e91d";
+        color: rgb(53, 33, 193);
+    }
+
+    &::after {
+        content: "\e91e";
+        margin-left: -0.734375em;
+        color: rgb(255, 255, 255);
+    }
+}
+
+//----------------------------------------button-top
+.icon-button-top {
+    font-size: 60px;
+
+    &::before {
+        content: "\e91b";
+        color: rgb(53, 33, 193);
+    }
+
+    &::after {
+        content: "\e91c";
+        margin-left: -1em;
+        color: #FFFFFF;
+    }
+}
+
+//----------------------------------------button-left
+
+.icon-button-left {
+    font-size: 60px;
+
+    &::before {
+        content: "\e923";
+        color: rgb(53, 33, 193);
+    }
+
+    &::after {
+        content: "\e924";
+        margin-left: -1em;
+        color: #FFFFFF;
+    }
+}
+
+//----------------------------------------button-right
+.icon-button-right {
+    font-size: 60px;
+
+    &::before {
+        content: "\e925";
+        color: rgb(53, 33, 193);
+    }
+
+    &::after {
+        content: "\e926";
+        margin-left: -1em;
+        color: #FFFFFF;
+    }
+}
+
+//----------------------------------------poerekrostok
+.icon-perekrostok:before {
+    content: "\e91f";
+    color: #015929;
+    font-size: 64px;
+}
+
+//----------------------------------------karusel
+.icon-karusel {
+    font-size: 64px;
+
+    &:before {
+        content: "\e927";
+        color: rgb(226, 37, 29);
+    }
+
+    &::after {
+        content: "\e928";
+        margin-left: -3.03125em;
+        color: rgb(0, 118, 74);
+    }
+}
+
+//----------------------------------------seligros
+.icon-seligros:before {
+    content: "\e929";
+    color: #c6031f;
+    font-size: 64px;
+}
+
+//----------------------------------------magnit
+.icon-magnit:before {
+    content: "\e95b";
+    color: #e30613;
+    font-size: 64px;
+}
+
+//----------------------------------------piatorochka
+.icon-piatorochka {
+    font-size: 64px;
+
+    &::before {
+        content: "\e920";
+        color: #008f32;
+    }
+
+    &::after {
+        content: "\e921";
+        color: #eb2316;
+        margin-left: -3.171875em;
+    }
+}

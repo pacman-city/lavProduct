@@ -13,30 +13,73 @@
         grid-template-columns: repeat(3, 335px);
     }
 
-    .card {
-        width: 335px;
-    }
-
-    span {
+    &__step {
         @extend %mavka20;
     }
 
-    img {
-        height: 95px;
-        width: auto;
-        margin-top: 20px;
-    }
-
-    p {
-        margin-top: 40px;
+    &__text {
         font-size: 20px;
     }
 
     button {
         margin-top: 28px;
         padding: 15px 20px;
-        background-color: #FBE3C9;
+
         color: $accentColor1;
         font-size: 18px;
+        font-weight: 700;
+
+        background-color: #FBE3C9;
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        &__cards {
+            margin: 80px auto 0;
+            max-width: 750px;
+            grid-template-columns: 1fr;
+        }
+
+        &__card {
+            height: 150px;
+        }
+
+        .icon-colab11,
+        .icon-colab21,
+        .icon-colab31 {
+            display: none;
+        }
+
+        .icon-colab1,
+        .icon-colab2,
+        .icon-colab3 {
+            float: right;
+            margin-top: -45px;
+            margin-right: -20px;
+            font-size: 110px;
+
+            span::after {
+                display: none;
+            }
+        }
+
+        &__step {
+            margin-right: 30px;
+            vertical-align: top;
+        }
+
+        &__step,
+        &__text {
+            display: inline-block;
+        }
+
+        &__text {
+            max-width: 500px;
+        }
+
+        button {
+            display: block;
+            margin-top: 10px;
+            margin-left: 55px;
+        }
     }
 }
