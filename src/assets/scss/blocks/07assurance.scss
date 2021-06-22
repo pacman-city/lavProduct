@@ -6,35 +6,25 @@
 
     &__cards {
         margin-top: 40px;
-
         display: grid;
         justify-content: space-around;
-        grid-template-columns: repeat(3, minmax(300px, 420px));
+        grid-template-columns: repeat(3, minmax(auto, 420px));
         grid-gap: 20px;
     }
 
     &__card {
-        padding: 210px 0 100px;
+        padding: 80px 0 100px;
+        position: relative;
+        z-index: 1;
+    }
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        background-position: top 100px center, center;
-        background-size: 246px, contain;
-        background-repeat: no-repeat;
-
-        &:nth-of-type(1) {
-            background-image: url(../images/background/assurance1.png), url(../images/svg/assurance1.svg);
-        }
-
-        &:nth-of-type(2) {
-            background-image: url(../images/background/assurance2.png), url(../images/svg/assurance2.svg);
-        }
-
-        &:nth-of-type(3) {
-            background-image: url(../images/background/assurance3.png), url(../images/svg/assurance3.svg);
-        }
+    svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
     }
 
     h2 {
@@ -43,16 +33,25 @@
         margin: 0 auto;
     }
 
+    &__image {
+        margin: 0 auto;
+        width: 245px;
+        height: 115px;
+
+        text-align: center;
+        background: no-repeat center/contain url(../images/background/assurance.png);
+    }
+
     b {
-        flex-grow: 1;
         display: block;
+        margin-top: 15px;
         text-align: center;
         @extend %bold26;
     }
 
     p {
         max-width: 320px;
-        margin-top: 20px;
+        margin: 25px auto 0;
         font-size: 18px;
         font-weight: 700;
         text-align: center;
@@ -60,62 +59,39 @@
 
     @media screen and (max-width: $desktopWidth) {
         &__cards {
-            grid-template-columns: repeat(3, 300px);
-        }
-
-        &__card {
-            padding: 160px 0 80px;
-
-            background-position: top 75px center, center;
-            background-size: 190px, contain;
-        }
-
-        b {
-            font-size: 22px;
-        }
-
-        p {
-            margin-top: 5px;
-            font-size: 16px;
-        }
-    }
-
-    @media screen and (max-width: $tabletWidth) {
-        &__cards {
+            max-width: 750px;
+            margin: 40px auto 0;
             grid-template-columns: 1fr;
         }
 
         &__card {
             align-items: start;
-            padding: 120px 20px 20px 110px;
+            padding: 30px;
 
+            border-radius: 5px;
+            background-image: none;
             background-color: $white;
+        }
 
-            background-position: top 20px left 20px;
-            background-size: 190px;
-            background-repeat: no-repeat;
+        svg {
+            display: none;
+        }
 
-            &:nth-of-type(1) {
-                background-image: url(../images/background/assurance1.png);
-            }
-
-            &:nth-of-type(2) {
-                background-image: url(../images/background/assurance2.png);
-            }
-
-            &:nth-of-type(3) {
-                background-image: url(../images/background/assurance3.png);
-            }
+        &__image {
+            background-image: none;
+            float: left;
+            width: auto;
         }
 
         b {
-            font-size: 22px;
+            margin: 35px 0 0 120px;
             text-align: left;
         }
 
         p {
+            margin: 25px 0 0 120px;
             text-align: left;
-            max-width: 600px;
+            max-width: unset;
         }
     }
 }

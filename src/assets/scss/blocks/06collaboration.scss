@@ -40,13 +40,11 @@
         }
 
         &__card {
-            height: 150px;
-        }
-
-        .icon-colab11,
-        .icon-colab21,
-        .icon-colab31 {
-            display: none;
+            height: 170px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            background-color: $accentColor3;
         }
 
         .icon-colab1,
@@ -62,14 +60,20 @@
             }
         }
 
-        &__step {
-            margin-right: 30px;
-            vertical-align: top;
+        .icon-colab11,
+        .icon-colab21,
+        .icon-colab31 {
+            display: none;
         }
 
         &__step,
         &__text {
             display: inline-block;
+        }
+
+        &__step {
+            margin-right: 30px;
+            vertical-align: top;
         }
 
         &__text {
