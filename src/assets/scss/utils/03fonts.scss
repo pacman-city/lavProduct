@@ -369,3 +369,147 @@
         margin-left: -3.171875em;
     }
 }
+
+//----------------------------------------benefits1
+.icon-benefits1 {
+    font-size: 90px;
+
+    &::before {
+        content: "\e946";
+        color: rgb(251, 227, 201);
+    }
+
+    &::after {
+        content: "\e947";
+        margin-left: -1em;
+        color: rgb(53, 33, 193);
+    }
+
+    span::after {
+        font-family: 'icomoon';
+        font-size: 90px;
+        content: "\e948";
+        margin-left: -1em;
+        color: rgb(238, 177, 104);
+    }
+}
+
+//----------------------------------------benefits2
+.icon-benefits2 {
+    font-size: 90px;
+
+    &::before {
+        content: "\e943";
+        color: rgb(251, 227, 201);
+    }
+
+    &::after {
+        content: "\e944";
+        margin-left: -1em;
+        color: rgb(53, 33, 193);
+    }
+
+    span::after {
+        font-family: 'icomoon';
+        font-size: 90px;
+        content: "\e945";
+        margin-left: -1em;
+        color: rgb(238, 177, 104);
+    }
+}
+
+//----------------------------------------benefits3
+.icon-benefits3 {
+    font-size: 90px;
+
+    &::before {
+        content: "\e940";
+        color: rgb(251, 227, 201);
+    }
+
+    &::after {
+        content: "\e941";
+        margin-left: -1.0224609375em;
+        color: rgb(53, 33, 193);
+    }
+
+    span::after {
+        font-family: 'icomoon';
+        font-size: 90px;
+        content: "\e942";
+        margin-left: -1.0224609375em;
+        color: rgb(238, 177, 104);
+    }
+}
+
+//----------------------------------------benefits4
+.icon-benefits4 {
+    font-size: 90px;
+
+    &::before {
+        content: "\e930";
+        color: rgb(251, 227, 201);
+    }
+
+    &::after {
+        content: "\e931";
+        color: rgb(53, 33, 193);
+        margin-left: -1em;
+    }
+
+    span::after {
+        font-family: 'icomoon';
+        font-size: 90px;
+        content: "\e92f";
+        color: rgb(238, 177, 104);
+        margin-left: -1em;
+    }
+}
+
+//----------------------------------------benefits5
+.icon-benefits5 {
+    font-size: 90px;
+
+    &::before {
+        content: "\e92a";
+        color: rgb(251, 227, 201);
+    }
+
+    &::after {
+        content: "\e92b";
+        color: rgb(53, 33, 193);
+        margin-left: -1em;
+    }
+
+    span::after {
+        content: "\e922";
+        font-family: 'icomoon';
+        font-size: 90px;
+        margin-left: -1em;
+        color: rgb(238, 177, 104);
+    }
+}
+
+//----------------------------------------benefits6
+.icon-benefits6 {
+    font-size: 90px;
+
+    &::before {
+        content: "\e92d";
+        color: rgb(251, 227, 201);
+    }
+
+    &::after {
+        content: "\e92e";
+        color: rgb(53, 33, 193);
+        margin-left: -1em;
+    }
+
+    span::after {
+        font-family: 'icomoon';
+        font-size: 90px;
+        margin-left: -1em;
+        content: "\e92c";
+        color: rgb(238, 177, 104);
+    }
+}
