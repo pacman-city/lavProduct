@@ -1,0 +1,15 @@
+.requisites {
+    &__col {
+        width: 485px;
+    }
+
+    h2 {
+        @extend %bold36;
+    }
+
+    a {
+        display: block;
+        @extend %bold24;
+        color: $accentColor2;
+    }
+}

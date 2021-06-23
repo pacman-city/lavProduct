@@ -1,0 +1,25 @@
+.faq {
+    h2 {
+        @extend %bold46;
+    }
+
+    .btn-solid {
+        margin-top: 94px;
+        padding: 20px 40px;
+    }
+
+    &__accordion {
+        border-top: 1px solid #EEDFCD;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 700;
+        color: $accentColor3;
+    }
+
+    address {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+}

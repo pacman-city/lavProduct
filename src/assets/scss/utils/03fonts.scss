@@ -106,7 +106,7 @@
     &::after {
         content: "\e906";
         margin-left: -1em;
-        color: rgb(53, 33, 193);
+        color: $accentColor1;
     }
 
     span::after {
@@ -134,7 +134,7 @@
 
     &::after {
         content: "\e90a";
-        color: #3521c1;
+        color: $accentColor1;
         margin-left: -1em;
     }
 
@@ -163,7 +163,7 @@
 
     &::after {
         content: "\e90e";
-        color: #3521c1;
+        color: $accentColor1;
         margin-left: -1em;
     }
 
@@ -192,7 +192,7 @@
 
     &::after {
         content: "\e912";
-        color: #3521c1;
+        color: $accentColor1;
         margin-left: -1em;
     }
 }
@@ -208,7 +208,7 @@
 
     &::after {
         content: "\e914";
-        color: #3521c1;
+        color: $accentColor1;
         margin-left: -1em;
     }
 }
@@ -224,7 +224,7 @@
 
     &::after {
         content: "\e916";
-        color: #3521c1;
+        color: $accentColor1;
         margin-left: -1em;
     }
 }
@@ -232,17 +232,17 @@
 //----------------------------------------socials
 .icon-instagram:before {
     content: "\e917";
-    color: #3521c1;
+    color: $accentColor1;
 }
 
 .icon-facebook:before {
     content: "\e918";
-    color: #3521c1;
+    color: $accentColor1;
 }
 
 .icon-vkontakte::before {
     content: "\e919";
-    color: #3521c1;
+    color: $accentColor1;
 }
 
 //----------------------------------------checked
@@ -258,13 +258,13 @@
 
     &::before {
         content: "\e91d";
-        color: rgb(53, 33, 193);
+        color: $accentColor1;
     }
 
     &::after {
         content: "\e91e";
         margin-left: -0.734375em;
-        color: rgb(255, 255, 255);
+        color: $white;
     }
 }
 
@@ -274,7 +274,7 @@
 
     &::before {
         content: "\e91b";
-        color: rgb(53, 33, 193);
+        color: $accentColor1;
     }
 
     &::after {
@@ -291,7 +291,7 @@
 
     &::before {
         content: "\e923";
-        color: rgb(53, 33, 193);
+        color: $accentColor1;
     }
 
     &::after {
@@ -307,7 +307,7 @@
 
     &::before {
         content: "\e925";
-        color: rgb(53, 33, 193);
+        color: $accentColor1;
     }
 
     &::after {
