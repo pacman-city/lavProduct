@@ -1,0 +1,76 @@
+.formCollab {
+    margin-top: 100px;
+
+    .container {
+        display: flex;
+    }
+
+    &__image {
+        background: #ccc;
+        width: 50%;
+        margin-right: 100px;
+    }
+
+    h2 {
+        margin-top: 100px;
+        @extend %mavka36;
+    }
+
+    &__promo {
+        margin-top: 10px;
+        @extend %bold36;
+
+        span {
+            color: $accentColor2
+        }
+    }
+
+    &__col {
+        width: 600px;
+    }
+
+    form {
+        margin-top: 50px;
+        max-width: 435px;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            padding: 21px 14px;
+
+
+
+
+            border-radius: 3px;
+            outline: 1px solid #DDD8D1;
+
+            font-family: 'Bellotta Text', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            font-style: normal;
+            color: $black;
+
+            &::placeholder {
+                font-size: 18px;
+                font-weight: 400;
+                font-style: normal;
+                color: $textDimmed
+            }
+        }
+
+        input[type=tel] {
+            margin-top: 26px;
+        }
+
+        .btn-solid {
+            margin-top: 40px;
+            padding: 20px
+        }
+    }
+
+    &__consent {
+        margin-top: 20px;
+        font-size: 14px;
+        color: $textDimmed
+    }
+}

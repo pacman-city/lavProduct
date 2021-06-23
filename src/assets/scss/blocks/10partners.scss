@@ -1,0 +1,27 @@
+.partners {
+    margin-top: 100px;
+
+    h2 {
+        @extend %bold46;
+        text-align: center;
+        max-width: unset;
+    }
+
+    &__row {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    img {
+        height: 64px;
+        width: auto;
+    }
+
+    .btn-solid {
+        display: flex;
+        margin: 110px auto 0;
+        padding: 20px 40px;
+    }
+}
