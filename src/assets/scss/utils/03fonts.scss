@@ -471,30 +471,6 @@
     font-size: 90px;
 
     &::before {
-        content: "\e92a";
-        color: rgb(251, 227, 201);
-    }
-
-    &::after {
-        content: "\e92b";
-        color: rgb(53, 33, 193);
-        margin-left: -1em;
-    }
-
-    span::after {
-        content: "\e922";
-        font-family: 'icomoon';
-        font-size: 90px;
-        margin-left: -1em;
-        color: rgb(238, 177, 104);
-    }
-}
-
-//----------------------------------------benefits6
-.icon-benefits6 {
-    font-size: 90px;
-
-    &::before {
         content: "\e92d";
         color: rgb(251, 227, 201);
     }
@@ -510,6 +486,30 @@
         font-size: 90px;
         margin-left: -1em;
         content: "\e92c";
+        color: rgb(238, 177, 104);
+    }
+}
+
+//----------------------------------------benefits6
+.icon-benefits6 {
+    font-size: 90px;
+
+    &::before {
+        content: "\e92a";
+        color: rgb(251, 227, 201);
+    }
+
+    &::after {
+        content: "\e92b";
+        color: rgb(53, 33, 193);
+        margin-left: -1em;
+    }
+
+    span::after {
+        content: "\e922";
+        font-family: 'icomoon';
+        font-size: 90px;
+        margin-left: -1em;
         color: rgb(238, 177, 104);
     }
 }
