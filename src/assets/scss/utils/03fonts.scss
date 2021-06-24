@@ -54,11 +54,14 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+//----------------------------------------logo
 .icon-logo:before {
     content: "\e900";
     color: $accentColor1;
+    font-size: 85px;
 }
 
+//----------------------------------------inSquare
 .icon-inSquare:after {
     content: "\e901";
     display: inline-block;
@@ -69,6 +72,7 @@
     vertical-align: middle;
 }
 
+//----------------------------------------btn plus
 .icon-btn-plus {
 
     &::before {
@@ -85,6 +89,7 @@
     }
 }
 
+//----------------------------------------arrow
 .icon-arrow::after {
     content: "\e904";
     margin-top: 5px;
@@ -233,16 +238,19 @@
 .icon-instagram:before {
     content: "\e917";
     color: $accentColor1;
+    font-size: 44px;
 }
 
 .icon-facebook:before {
     content: "\e918";
     color: $accentColor1;
+    font-size: 44px;
 }
 
 .icon-vkontakte::before {
     content: "\e919";
     color: $accentColor1;
+    font-size: 44px;
 }
 
 //----------------------------------------checked
@@ -268,8 +276,8 @@
     }
 }
 
-//----------------------------------------button-top
-.icon-button-top {
+//----------------------------------------button-up
+.icon-button-up {
     font-size: 60px;
 
     &::before {
@@ -512,4 +520,28 @@
         margin-left: -1em;
         color: rgb(238, 177, 104);
     }
+}
+
+//----------------------------------------close
+.icon-close {
+    font-size: 40px;
+
+    &::before {
+        content: "\e932";
+        color: $textDimmed;
+    }
+
+    &::after {
+        content: "\e933";
+        color: $text;
+        margin-left: -1em;
+    }
+}
+
+//----------------------------------------cross
+.icon-cross:before {
+    content: "\e934";
+    color: $textDimmed;
+    font-size: 22px;
+    color: $accentColor2;
 }

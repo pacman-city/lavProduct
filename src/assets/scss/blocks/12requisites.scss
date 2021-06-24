@@ -1,6 +1,30 @@
 .requisites {
+    margin-top: 100px;
+    height: 580px;
+    position: relative;
+
+    iframe {
+        position: absolute;
+    }
+
+    &__shade {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+        height: 100%;
+        padding: 50px;
+        display: flex;
+    }
+
     &__col {
+        padding: 50px;
         width: 485px;
+        position: relative;
+        background-color: $white;
     }
 
     h2 {
@@ -8,8 +32,28 @@
     }
 
     a {
+        margin-top: 20px;
+        line-height: 1.25;
         display: block;
         @extend %bold24;
         color: $accentColor2;
+    }
+
+    p {
+        margin-top: 30px;
+        line-height: 1.8;
+    }
+
+    address {
+        font-size: 18px;
+        line-height: 1.3;
+        font-style: normal;
+        color: $text;
+    }
+
+    .icon-map-pin {
+        position: absolute;
+        right: 48%;
+        top: 40%;
     }
 }

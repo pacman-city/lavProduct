@@ -1,0 +1,30 @@
+.footer {
+    position: relative;
+
+    .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-up {
+        position: absolute;
+        right: 10%;
+        top: -30px;
+        box-shadow: 0 10px 50px 0 #9650001E;
+        border-radius: 50%;
+    }
+
+    &__copyrights {
+        margin-top: 50px;
+    }
+
+    &__socials {
+        margin-top: 40px;
+
+       a {
+            margin-left: 24px;
+        }
+    }
+}

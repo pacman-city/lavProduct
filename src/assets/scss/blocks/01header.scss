@@ -10,11 +10,8 @@
         align-items: center;
     }
 
-    &__logo {
-        padding: 4px 8px;
+    .btn-logo {
         margin-right: 50px;
-        margin-left: -8px;
-        font-size: 85px;
     }
 
     &__menu {
@@ -39,25 +36,9 @@
         }
     }
 
-    &__phone {
+    .btn-orderCall {
         margin-left: auto;
         align-self: flex-start;
-
-        a {
-            display: block;
-            width: auto;
-            padding: 4px 8px;
-
-            span {
-                @extend %bold28;
-            }
-
-            div {
-                @extend %bold16;
-                text-align: right;
-                line-height: 2.3;
-            }
-        }
     }
 
     .hamburger {
@@ -65,7 +46,6 @@
     }
 
     @media screen and (max-width: $desktopWidth) {
-
         .container {
             position: relative;
         }
@@ -85,7 +65,7 @@
 
             flex-direction: column;
 
-            transform: translateY(300px) scale(1.5);
+            transform: translateY(300px);
 
             visibility: hidden;
             transition: transform 0.5s linear;
@@ -98,13 +78,15 @@
     }
 
     @media screen and (max-width: $phoneWidth) {
-        &__logo {
+        .btn-logo {
             padding: 0;
             margin: -15px 10px 0 0;
-            font-size: 65px;
+            font-size: 5px !important;
+
+            outline: 1px solid red;
         }
 
-        &__phone a {
+        .btn-orderCall a {
             span {
                 font-size: 25px;
             }
@@ -119,13 +101,6 @@
             margin-left: 20px;
         }
     }
-
-
-}
-
-
-.header {
-    overflow: hidden;
 }
 
 //temp:
