@@ -10,7 +10,7 @@
         align-items: center;
     }
 
-    .btn-logo {
+    .icon-logo {
         margin-right: 50px;
     }
 
@@ -78,7 +78,7 @@
     }
 
     @media screen and (max-width: $phoneWidth) {
-        .btn-logo {
+        .icon-logo {
             padding: 0;
             margin: -15px 10px 0 0;
             font-size: 5px !important;
@@ -87,11 +87,11 @@
         }
 
         .btn-orderCall a {
-            span {
+            b {
                 font-size: 25px;
             }
 
-            div {
+            p {
                 line-height: 1.5;
                 font-size: 14px;
             }

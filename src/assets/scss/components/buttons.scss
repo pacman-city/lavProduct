@@ -4,11 +4,11 @@
         width: auto;
         padding: 4px 8px;
 
-        span {
+        b {
             @extend %bold28;
         }
 
-        div {
+        p {
             @extend %bold16;
             text-align: right;
             line-height: 2.3;

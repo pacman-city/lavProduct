@@ -2,29 +2,68 @@
     position: relative;
 
     .container {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        display: flex;
-        justify-content: space-between;
+        padding: 40px 30px;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-row-gap: 10px;
     }
 
-    .btn-up {
+    .icon-button-up {
         position: absolute;
         right: 10%;
         top: -30px;
-        box-shadow: 0 10px 50px 0 #9650001E;
-        border-radius: 50%;
+    }
+
+    .icon-logo {
+        place-self: start;
+    }
+
+    .btn-orderCall {
+        place-self: start end;
+
+        p {
+            font-size: 18px;
+            color: $accentColor2;
+        }
     }
 
     &__copyrights {
-        margin-top: 50px;
+        place-self: end start;
+        margin-top: 20px;
+
+        font-size: 14px;
+        color: $textDimmed;
     }
 
     &__socials {
-        margin-top: 40px;
+        place-self: start end;
 
-       a {
-            margin-left: 24px;
+        a:nth-of-type(2) {
+            margin: 0 24px;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        .container {
+            grid-template-columns: 1fr;
+            padding: 20px 15px;
+        }
+
+        &__copyrights {
+            order: 1;
+        }
+
+        &__socials,
+        .btn-orderCall {
+            place-self: start;
+        }
+
+        .btn-orderCall {
+            margin: 20px 0;
+        }
+
+        .btn-orderCall div {
+            text-align: left;
         }
     }
 }

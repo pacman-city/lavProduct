@@ -283,6 +283,7 @@
     &::before {
         content: "\e91b";
         color: $accentColor1;
+        box-shadow: 0 10px 50px 0 #9650001E;
     }
 
     &::after {
