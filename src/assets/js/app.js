@@ -9,8 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   hamburgerBtn.addEventListener('click', toggleMenu);
 
+  ////////////////////////////////////////////////////////////////
+  const accordionLinks = document.querySelectorAll('.faq__accordion li');
 
+  const toggleAccordionLinks = function() {
+    accordionLinks.forEach(link => (link === this) ? link.classList.add('open') : link.classList.remove('open'));
+  }
 
-
+  accordionLinks.forEach(link => link.addEventListener('click', toggleAccordionLinks));
 
 })
