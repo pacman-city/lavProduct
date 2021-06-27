@@ -5,7 +5,8 @@
     background: no-repeat center/cover url(../images/svg/curve.svg);
 
     .container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr auto;
     }
 
     h1 {
@@ -26,12 +27,32 @@
     }
 
     &__image {
-        margin-left: auto;
-        padding-left: 20px;
-        max-width: 650px;
-        width: 0;
-        flex-grow: 1;
-        align-self: center;
+        width: 650px;
+        position: relative;
+
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__imageFrame1 {
+        background: no-repeat center/contain url(../../assets/images/background/introFrame1.png);
+    }
+
+    &__imageFrame2 {
+        background: no-repeat center/contain url(../../assets/images/background/introFrame2.png);
+    }
+
+    &__imageFrame3 {
+        background: no-repeat center/contain url(../../assets/images/background/introFrame3.png);
+    }
+
+    &__imageFrame4 {
+        background: no-repeat center/contain url(../../assets/images/background/introFrame4.png);
     }
 
     @media screen and (max-width: $desktopWidth) {
@@ -50,6 +71,10 @@
         button {
             margin-top: 65px;
             font-size: 18px;
+        }
+
+        &__image {
+            width: 500px;
         }
     }
 
