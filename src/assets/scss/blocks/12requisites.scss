@@ -15,9 +15,7 @@
     }
 
     .container {
-        height: 100%;
         padding: 50px;
-        display: flex;
     }
 
     &__col {
@@ -53,7 +51,13 @@
 
     .icon-map-pin {
         position: absolute;
-        right: 48%;
-        top: 40%;
+        right: 40%;
+        top: 28%;
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        .icon-map-pin {
+            display: none;
+        }
     }
 }

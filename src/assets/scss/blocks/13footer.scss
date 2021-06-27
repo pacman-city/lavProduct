@@ -1,17 +1,18 @@
 .footer {
-    position: relative;
 
     .container {
         padding: 40px 30px;
         display: grid;
         grid-template-columns: repeat(2, auto);
         grid-row-gap: 10px;
+
+        position: relative;
     }
 
     .icon-button-up {
         position: absolute;
-        right: 10%;
         top: -30px;
+        right: -90px;
     }
 
     .icon-logo {
@@ -43,10 +44,21 @@
         }
     }
 
+    @media screen and (max-width: 1900px) {
+        .icon-button-up {
+            top: -200px;
+            right: 30px;
+        }
+    }
+
     @media screen and (max-width: $phoneWidth) {
         .container {
             grid-template-columns: 1fr;
             padding: 20px 15px;
+        }
+
+        .icon-button-up {
+            display: none;
         }
 
         &__copyrights {
@@ -62,7 +74,7 @@
             margin: 20px 0;
         }
 
-        .btn-orderCall div {
+        .btn-orderCall p {
             text-align: left;
         }
     }

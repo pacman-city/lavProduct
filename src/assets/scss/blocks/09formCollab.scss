@@ -2,13 +2,14 @@
     margin-top: 100px;
 
     .container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 600px 600px;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__image {
-        background: #ccc;
-        width: 50%;
-        margin-right: 100px;
+        margin-left: -80px;
     }
 
     h2 {
@@ -23,10 +24,6 @@
         span {
             color: $accentColor2
         }
-    }
-
-    &__col {
-        width: 600px;
     }
 
     form {
@@ -72,5 +69,34 @@
         margin-top: 20px;
         font-size: 14px;
         color: $textDimmed
+    }
+
+    @media screen and (max-width: 1500px) {
+        .container {
+            grid-template-columns: 490px 600px;
+            grid-column-gap: 50px;
+            justify-content: center;
+        }
+
+        &__image {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        .container {
+            grid-template-columns: 430px 480px;
+            grid-column-gap: 20px;
+        }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+
+        &__image {
+            display: none;
+        }
     }
 }

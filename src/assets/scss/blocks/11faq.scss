@@ -3,7 +3,7 @@
 
     .container {
         display: grid;
-        grid-template: auto 1fr / 1fr 750px;
+        grid-template: auto 1fr / 1fr 700px;
         place-items: start;
     }
 
@@ -47,6 +47,7 @@
     .icon-cross {
         margin-left: 90px;
         transform: rotateZ(45deg);
+        margin-right: 20px;
     }
 
     p {
