@@ -10,12 +10,13 @@
     margin-top: 130px;
 
     &__header {
-        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
 
         p {
-            max-width: 630px;
-            margin-left: auto;
+            max-width: 650px;
             padding-top: 100px;
+            padding-left: 15px;
 
             font-size: 20px;
             line-height: 1.7;
@@ -24,55 +25,73 @@
 
     &__title {
         width: 640px;
-        height: 370px;
+        height: 360px;
 
-        position: absolute;
-        left: -12%;
+        transform: translateX(-130px);
 
-        padding: 100px 0 0 120px;
+        padding: 100px 0 0 110px;
         @extend %mavka70;
-        background: no-repeat center/100% url(../images/background/catalogTitle.png);
+
+        background: no-repeat left 0 top 0/contain url(../images/background/catalogTitle.png);
 
         div {
             transform: rotate(-10deg);
+
+            &:last-child {
+                margin-left: 80px;
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 1600px) {
+        &__title {
+            width: 550px;
+            height: 310px;
+
+            transform: unset;
+            padding: 80px 0 0 80px;
         }
 
-        div:last-child {
-            margin-left: 80px;
+        &__header p {
+            max-width: 560px;
         }
     }
 
     @media screen and (max-width: $desktopWidth) {
         &__title {
-            position: relative;
-
-            left: -135px;
-        }
-
-        &__header p {
-            max-width: 730px;
-            margin-left: auto;
-            padding-top: 40px;
-        }
-    }
-
-    @media screen and (max-width: $phoneWidth) {
-        &__title {
-            width: 100%;
-            height: unset;
-            font-size: 55px;
             background: none;
-            left: 0;
+            height: auto;
+            width: auto;
             padding: 0;
 
             div {
-                display: inline-block;
-                transform: none;
-
-                &:last-child {
-                    margin-left: 0;
-                }
+                transform: rotate(-5deg);
             }
         }
+
+        &__header p {
+            padding: 0 0 0 40px;
+        }
     }
+
+    // @media screen and (max-width: $phoneWidth) {
+    //     &__title {
+    //         width: 100%;
+    //         height: unset;
+    //         font-size: 55px;
+    //         background: none;
+    //         left: 0;
+    //         padding: 0;
+
+    //         div {
+    //             display: inline-block;
+    //             transform: none;
+
+    //             &:last-child {
+    //                 margin-left: 0;
+    //             }
+    //         }
+    //     }
+    // }
 }
