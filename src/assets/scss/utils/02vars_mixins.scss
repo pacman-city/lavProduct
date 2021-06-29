@@ -108,12 +108,22 @@ $smPhoneWidth : 575.98px;
     font-size: 54px;
     font-weight: 700;
     color: $black;
+    line-height: 1.1;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 48px;
+    }
 }
 
 %bold57 {
     font-size: 57px;
     font-weight: 700;
     color: $accentColor1;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 38px;
+        line-height: 1.1;
+    }
 }
 
 // ---------------------------------------------------------------- FONTS regular
@@ -121,6 +131,27 @@ $smPhoneWidth : 575.98px;
     font-size: 18px;
     font-weight: 400;
     color: $textDimmed;
+}
+
+%regular20 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: $text;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 18px;
+    }
+}
+
+%regular26 {
+    font-size: 26px;
+    font-weight: 400;
+    color: $text;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 20px;
+    }
 }
 
 // ---------------------------------------------------------------- FONTS mavka
@@ -144,4 +175,8 @@ $smPhoneWidth : 575.98px;
     font-weight: 500;
     color: $accentColor2;
     line-height: 0.9;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 55px;
+    }
 }

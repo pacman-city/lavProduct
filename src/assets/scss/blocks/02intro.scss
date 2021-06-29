@@ -11,14 +11,12 @@
 
     h1 {
         margin-top: 75px;
-
         @extend %bold54;
-        line-height: 1.1;
     }
 
     p {
         margin-top: 35px;
-        font-size: 26px;
+        @extend %regular26;
     }
 
     button {
@@ -59,14 +57,6 @@
         max-height: 100vh;
         min-height: 750px;
         padding-top: 115px;
-
-        h1 {
-            font-size: 48px;
-        }
-
-        p {
-            font-size: 20px;
-        }
 
         button {
             margin-top: 65px;

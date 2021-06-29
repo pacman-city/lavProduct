@@ -1,64 +1,54 @@
 .numerals {
-
     margin-top: 105px;
 
     &__wrapper {
-        max-width: 1215px;
+        margin: 0 auto;
+        max-width: 1100px;
+
         display: grid;
         justify-content: space-between;
-        grid-template-columns: repeat(4, 225px);
+        grid-template-columns: repeat(4, 230px);
     }
 
     h2 {
         @extend %bold57;
-        white-space: nowrap;
     }
 
     p {
         margin-top: 10px;
-        font-size: 20px;
-        line-height: 1.4;
-        display: inline-block;
+        @extend %regular20;
     }
 
     @media screen and (max-width: $desktopWidth) {
         &__wrapper {
             max-width: 900px;
-            margin: 0 auto;
-            justify-items: space-around;
+            grid-template-columns: repeat(4, 200px);
         }
 
-        h2 {
-            font-size: 42px;
-        }
-
+        h2,
         p {
-            font-size: 18px;
+            text-align: center;
         }
     }
 
     @media screen and (max-width: $tabletWidth) {
         &__wrapper {
             max-width: 720px;
-            grid-template: repeat(2, 1fr) / repeat(2, 225px);
-            grid-row-gap: 20px;
+            grid-template-columns: repeat(4, 175px);
         }
     }
 
     @media screen and (max-width: $phoneWidth) {
         &__wrapper {
-            max-width: 520px;
-        }
-
-        h2 {
-            font-size: 40px;
+            grid-template: repeat(4, 1fr) / 1fr;
+            gap: 20px;
         }
     }
 
-    @media screen and (max-width: $smPhoneWidth) {
-        &__wrapper {
-            max-width: 420px;
-            grid-template: repeat(4, auto) / 1fr;
-        }
-    }
+    // @media screen and (max-width: $smPhoneWidth) {
+    //     &__wrapper {
+    //         max-width: 420px;
+    //         grid-template: repeat(4, auto) / 1fr;
+    //     }
+    // }
 }

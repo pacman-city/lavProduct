@@ -75,23 +75,14 @@
         }
     }
 
-    // @media screen and (max-width: $phoneWidth) {
-    //     &__title {
-    //         width: 100%;
-    //         height: unset;
-    //         font-size: 55px;
-    //         background: none;
-    //         left: 0;
-    //         padding: 0;
+    @media screen and (max-width: $tabletWidth) {
+        &__header {
+            grid-template: 160px auto/ 1fr;
+        }
 
-    //         div {
-    //             display: inline-block;
-    //             transform: none;
-
-    //             &:last-child {
-    //                 margin-left: 0;
-    //             }
-    //         }
-    //     }
-    // }
+        p {
+            justify-self: end;
+            max-width: 650px;
+        }
+    }
 }
