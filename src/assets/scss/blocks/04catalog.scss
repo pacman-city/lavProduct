@@ -77,12 +77,34 @@
 
     @media screen and (max-width: $tabletWidth) {
         &__header {
-            grid-template: 160px auto/ 1fr;
+            grid-template: 140px auto/ 1fr;
+
+            p {
+                justify-self: end;
+                max-width: 650px;
+                padding: 0 0 0;
+            }
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        &__header {
+            grid-template: auto auto/ 1fr;
+
+            p {
+                padding-top: 20px;
+            }
         }
 
-        p {
-            justify-self: end;
-            max-width: 650px;
+        &__title {
+            div {
+                display: inline-block;
+                transform: none;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
         }
     }
 }

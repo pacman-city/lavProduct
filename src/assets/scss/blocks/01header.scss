@@ -1,28 +1,23 @@
 .header {
     position: absolute;
     width: 100%;
+    // outline: 1px solid black;
 
     .container {
-        height: 113px;
+        // height: 113px;
         padding-top: 20px;
-
         display: flex;
         align-items: center;
     }
 
-    .icon-logo {
-        margin-right: 50px;
-    }
-
     &__menu {
+        margin-left: 50px;
         display: flex;
         align-items: center;
 
         a {
             padding: 18px;
-
             @extend %bold18;
-
             transition: all 0.1s ease-out;
 
             &:hover {
@@ -51,7 +46,6 @@
         }
 
         .hamburger {
-            align-self: flex-start;
             display: block;
             margin-left: 50px;
         }
@@ -59,9 +53,10 @@
         &__menu {
             position: absolute;
             width: 100%;
-            top: 113px;
+            top: 90px;
             left: 0;
             padding-top: 30px;
+            margin-left: 0;
 
             flex-direction: column;
 
@@ -78,45 +73,37 @@
     }
 
     @media screen and (max-width: $phoneWidth) {
-        .icon-logo {
-            padding: 0;
-            margin: -15px 10px 0 0;
-            font-size: 5px !important;
-
-            outline: 1px solid red;
-        }
-
-        .btn-orderCall a {
-            b {
-                font-size: 25px;
-            }
-
-            p {
-                line-height: 1.5;
-                font-size: 14px;
-            }
-        }
-
         .hamburger {
             margin-left: 20px;
         }
     }
-}
 
-//temp:
-.header.menu-open {
-    background: $accentColor3;
+    @media screen and (max-width: $smPhoneWidth) {
+        .hamburger {
+            margin-left: 0;
+        }
+    }
 
-    .header__menu {
-        transform: translate(0);
-        visibility: visible;
+    &.menu-open {
         background: $accentColor3;
 
-        transition: transform 0.3s linear, background-color 0.2s linear 0.1s;
+        .header__menu {
+            transform: translate(0);
+            visibility: visible;
+            background: $accentColor3;
 
-        a {
-            transition: color 0.1s linear 0.2s;
-            color: $black;
+            transition: transform 0.3s linear, background-color 0.2s linear 0.1s;
+
+            a {
+                transition: color 0.1s linear 0.2s;
+                color: $black;
+            }
+        }
+
+        @media screen and (max-width: $phoneWidth) {
+            .header__menu {
+                top: 80px;
+            }
         }
     }
 }

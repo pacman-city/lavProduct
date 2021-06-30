@@ -1,5 +1,4 @@
 .footer {
-
     .container {
         padding: 40px 30px;
         display: grid;
@@ -51,14 +50,16 @@
         }
     }
 
+    @media screen and (max-width: $desktopWidth) {
+        .icon-button-up {
+            display: none;
+        }
+    }
+
     @media screen and (max-width: $phoneWidth) {
         .container {
             grid-template-columns: 1fr;
             padding: 20px 15px;
-        }
-
-        .icon-button-up {
-            display: none;
         }
 
         &__copyrights {

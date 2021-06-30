@@ -13,8 +13,6 @@ $desktopWidth : 1199.98px;
 $tabletWidth : 991.98px;
 $phoneWidth : 767.98px;
 $smPhoneWidth : 575.98px;
-// $phoneWidth : 480px;
-// $smPhoneWidth : 320px;
 
 %no-select {
     // ---------------------------------------------------------------- no select
@@ -48,52 +46,73 @@ $smPhoneWidth : 575.98px;
 }
 
 // ---------------------------------------------------------------- FONTS bold
-%bold16 {
-    font-size: 16px;
-    font-weight: 700;
-    color: $accentColor1;
-}
-
 %bold18 {
     font-size: 18px;
     font-weight: 700;
     color: $black;
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 16px;
+    }
+
 }
 
 %bold20 {
     font-size: 20px;
     font-weight: 700;
     color: $text;
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 18px;
+    }
 }
 
 %bold24 {
     font-size: 24px;
     font-weight: 700;
     color: $black;
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 20px;
+    }
 }
 
 %bold26 {
     font-size: 26px;
     font-weight: 700;
     color: $black;
-}
 
-%bold28 {
-    font-size: 28px;
-    font-weight: 700;
-    color: $black;
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 22px;
+    }
 }
 
 %bold36 {
     font-size: 36px;
     font-weight: 700;
     color: $black;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 23px;
+    }
 }
 
 %bold40 {
     font-size: 40px;
     font-weight: 700;
     color: $black;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 34px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 26px;
+    }
 }
 
 %bold46 {
@@ -102,6 +121,14 @@ $smPhoneWidth : 575.98px;
     color: $black;
     max-width: 510px;
     line-height: 1.1;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 39px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 30px;
+    }
 }
 
 %bold54 {
@@ -112,6 +139,10 @@ $smPhoneWidth : 575.98px;
 
     @media screen and (max-width: $desktopWidth) {
         font-size: 48px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 35px;
     }
 }
 
@@ -131,6 +162,10 @@ $smPhoneWidth : 575.98px;
     font-size: 18px;
     font-weight: 400;
     color: $textDimmed;
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 16px;
+    }
 }
 
 %regular20 {
@@ -152,6 +187,10 @@ $smPhoneWidth : 575.98px;
     @media screen and (max-width: $desktopWidth) {
         font-size: 20px;
     }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 18px;
+    }
 }
 
 // ---------------------------------------------------------------- FONTS mavka
@@ -167,6 +206,14 @@ $smPhoneWidth : 575.98px;
     font-family: 'Sweet Mavka Script', sans-serif;
     font-weight: 500;
     color: $accentColor2;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 31px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 23px;
+    }
 }
 
 %mavka70 {
@@ -178,5 +225,9 @@ $smPhoneWidth : 575.98px;
 
     @media screen and (max-width: $desktopWidth) {
         font-size: 55px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 45px;
     }
 }

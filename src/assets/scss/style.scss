@@ -5,16 +5,10 @@
 @import './utils/04pagePresets';
 
 
-/* components */
-@import './components/hamburger';
-@import './components/btn-solid';
-@import './components/buttons.scss';
-
-
-
-/* SubBlocks & page elements */
+/* SubBlocks & elements */
 @import "./subBlocks/01catalogDepartment.scss";
 @import "./subBlocks/02productCard.scss";
+@import './subBlocks/03buttons.scss';
 
 
 /* Blocks */
