@@ -18,7 +18,8 @@
     }
 
     &__text {
-        font-size: 20px;
+        @extend %regular20;
+        line-height: 1.5;
     }
 
     button {
@@ -35,25 +36,33 @@
     @media screen and (max-width: $desktopWidth) {
         &__cards {
             margin: 80px auto 0;
-            max-width: 750px;
+            max-width: 710px;
             grid-template-columns: 1fr;
+            gap: 30px;
         }
 
         &__card {
-            height: 170px;
             padding: 25px;
-            margin-bottom: 30px;
             border-radius: 5px;
             background-color: $accentColor3;
+
+            display: grid;
+            grid-template: repeat(2, auto) / 100px auto;
+        }
+
+        &__icon {
+            grid-area: 2 / 1 / -1 / 2;
+        }
+
+        &__content {
+            grid-area: 1 / 2 / -1 / -1;
         }
 
         .icon-colab1,
         .icon-colab2,
         .icon-colab3 {
-            float: right;
-            margin-top: -45px;
-            margin-right: -20px;
-            font-size: 110px;
+            line-height: 1;
+            font-size: 70px;
 
             span::after {
                 display: none;
@@ -66,24 +75,22 @@
             display: none;
         }
 
-        &__step,
-        &__text {
-            display: inline-block;
-        }
-
-        &__step {
-            margin-right: 30px;
-            vertical-align: top;
-        }
-
-        &__text {
-            max-width: 500px;
-        }
-
         button {
-            display: block;
             margin-top: 10px;
-            margin-left: 55px;
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        &__card {
+            padding: 15px;
+
+            grid-template: repeat(2, auto) / 50px auto;
+        }
+
+        .icon-colab1,
+        .icon-colab2,
+        .icon-colab3 {
+            font-size: 40px;
         }
     }
 }

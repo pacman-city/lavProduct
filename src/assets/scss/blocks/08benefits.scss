@@ -1,5 +1,4 @@
 .benefits {
-
     margin-top: 100px;
 
     h2 {
@@ -21,19 +20,19 @@
     }
 
     p {
-        font-size: 20px;
+        @extend %regular20;
+        line-height: 1.5;
     }
 
     @media screen and (max-width: $desktopWidth) {
         &__cards {
-            max-width: 750px;
+            max-width: 710px;
             margin: 80px auto 0;
             grid-template-columns: 1fr;
             grid-row-gap: 30px;
         }
 
         &__card {
-            height: 170px;
             padding: 25px;
             display: flex;
             align-items: center;
@@ -43,10 +42,25 @@
 
         span {
             line-height: 1;
+            font-size: 70px;
+
+            span {
+                display: none;
+            }
         }
 
         p {
-            margin-left: 40px;
+            margin-left: 10px;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        span {
+            font-size: 40px;
+        }
+
+        &__card {
+            padding: 15px;
         }
     }
 }

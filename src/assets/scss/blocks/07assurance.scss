@@ -52,21 +52,22 @@
     p {
         max-width: 320px;
         margin: 25px auto 0;
-        font-size: 18px;
-        font-weight: 700;
+
+        @extend %bold18;
+        color: $text;
         text-align: center;
     }
 
     @media screen and (max-width: $desktopWidth) {
         &__cards {
-            max-width: 750px;
+            max-width: 710px;
             margin: 40px auto 0;
             grid-template-columns: 1fr;
         }
 
         &__card {
             align-items: start;
-            padding: 30px;
+            padding: 25px;
 
             border-radius: 5px;
             background-image: none;
@@ -81,17 +82,36 @@
             background-image: none;
             float: left;
             width: auto;
+            font-size: 70px;
         }
 
         b {
-            margin: 35px 0 0 120px;
+            margin: 20px 0 0 100px;
             text-align: left;
         }
 
         p {
-            margin: 25px 0 0 120px;
+            margin: 15px 0 0 100px;
             text-align: left;
             max-width: unset;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        &__card {
+            padding: 15px;
+        }
+
+        &__image {
+            font-size: 40px;
+        }
+
+        b {
+            margin: 10px 0 0 60px;
+        }
+
+        p {
+            margin: 15px 0 0 60px;
         }
     }
 }

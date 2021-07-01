@@ -70,6 +70,14 @@
     margin-bottom: 18px;
     margin-left: 2px;
     vertical-align: middle;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 14px;
+    }
 }
 
 //----------------------------------------btn plus
