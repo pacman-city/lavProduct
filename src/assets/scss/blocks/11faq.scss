@@ -70,4 +70,34 @@
             grid-area: unset;
         }
     }
+
+    @media screen and (max-width: $tabletWidth) {
+        .icon-cross {
+            margin-left: 40px;
+        }
+
+        b {
+            margin: 24px 0;
+        }
+
+        p {
+            margin: 0 45px 0 0;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        b {
+            margin: 18px 0;
+        }
+
+        li.open p {
+            height: 150px;
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        li.open p {
+            height: 180px;
+        }
+    }
 }

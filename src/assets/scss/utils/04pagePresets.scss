@@ -29,6 +29,15 @@ button {
     @extend %btn-reset;
 }
 
+input,
+textarea {
+    font-family: inherit;
+
+    &::placeholder {
+        font-family: inherit;
+    }
+}
+
 main {
     margin: 0 auto;
     max-width: 1920px;
