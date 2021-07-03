@@ -43,7 +43,6 @@
         }
     }
 
-
     @media screen and (max-width: 1600px) {
         &__title {
             width: 550px;
@@ -82,18 +81,14 @@
             p {
                 justify-self: end;
                 max-width: 650px;
-                padding: 0 0 0;
+                padding: 20px 0 0;
             }
         }
     }
 
-    @media screen and (max-width: $smPhoneWidth) {
+    @media screen and (max-width: $phoneWidth) {
         &__header {
             grid-template: auto auto/ 1fr;
-
-            p {
-                padding-top: 20px;
-            }
         }
 
         &__title {

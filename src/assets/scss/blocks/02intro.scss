@@ -72,4 +72,10 @@
             display: none;
         }
     }
+
+    @media screen and (max-width: $phoneWidth) {
+        button {
+            padding: 18px 15px;
+        }
+    }
 }

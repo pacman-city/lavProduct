@@ -9,7 +9,7 @@ $accentColor2: #E3A156;
 $accentColor3: #FAF6EF;
 
 // breakpoints
-$desktopWidth : 1199.98px;
+$desktopWidth : 1279.98px;
 $tabletWidth : 991.98px;
 $phoneWidth : 767.98px;
 $smPhoneWidth : 575.98px;
@@ -61,8 +61,12 @@ $smPhoneWidth : 575.98px;
     font-weight: 700;
     color: $text;
 
-    @media screen and (max-width: $phoneWidth) {
+    @media screen and (max-width: $desktopWidth) {
         font-size: 18px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 16px;
     }
 }
 
@@ -142,6 +146,10 @@ $smPhoneWidth : 575.98px;
 
     @media screen and (max-width: $phoneWidth) {
         font-size: 35px;
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        font-size: 32px;
     }
 }
 

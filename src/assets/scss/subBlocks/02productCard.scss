@@ -1,14 +1,21 @@
 .card {
+    padding: 24px 20px 45px;
     display: flex;
     flex-direction: column;
-
-    padding: 24px 20px 45px;
+    position: relative;
 
     box-shadow: 0 10px 50px 0 #674b2415;
     background: $accentColor3;
 
     &:hover {
         background: $white;
+
+        label::after {
+            visibility: visible;
+            transform: translateX(-55px);
+            opacity: 1;
+            transition: transform 0.7s cubic-bezier(.2, .6, 0, .83), opacity 0.25s ease-out 0.05s;
+        }
     }
 
     label {
@@ -24,13 +31,6 @@
             visibility: hidden;
             opacity: 0;
             transition: none;
-        }
-
-        &:hover::after {
-            visibility: visible;
-            transform: translateX(-35px);
-            opacity: 1;
-            transition: transform 0.5s cubic-bezier(.2, .6, 0, .83), opacity 0.3s ease-in;
         }
 
         a {

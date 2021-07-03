@@ -1,3 +1,17 @@
+a,
+button {
+    @extend %btn-reset;
+}
+
+input,
+textarea {
+    font-family: inherit;
+
+    &::placeholder {
+        font-family: inherit;
+    }
+}
+
 .icon-logo {
     padding: 4px 8px;
     margin-left: -8px;
@@ -130,6 +144,7 @@
 .btn-solid {
     border-radius: 3px;
     background-color: $accentColor1;
+    text-align: center;
 
     @extend %bold20;
     color: $white;
