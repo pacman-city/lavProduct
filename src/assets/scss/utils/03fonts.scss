@@ -338,22 +338,22 @@
 .icon-perekrostok:before {
     content: "\e91f";
     color: #015929;
-    font-size: 64px;
+    vertical-align: top;
 }
 
 //----------------------------------------karusel
 .icon-karusel {
-    font-size: 64px;
-
     &:before {
         content: "\e927";
         color: rgb(226, 37, 29);
+        vertical-align: top;
     }
 
     &::after {
         content: "\e928";
         margin-left: -3.03125em;
         color: rgb(0, 118, 74);
+        vertical-align: top;
     }
 }
 
@@ -361,29 +361,29 @@
 .icon-seligros:before {
     content: "\e929";
     color: #c6031f;
-    font-size: 64px;
+    vertical-align: top;
 }
 
 //----------------------------------------magnit
 .icon-magnit:before {
     content: "\e95b";
     color: #e30613;
-    font-size: 64px;
+    vertical-align: top;
 }
 
 //----------------------------------------piatorochka
 .icon-piatorochka {
-    font-size: 64px;
-
     &::before {
         content: "\e920";
         color: #008f32;
+        vertical-align: top;
     }
 
     &::after {
         content: "\e921";
         color: #eb2316;
         margin-left: -3.171875em;
+        vertical-align: top;
     }
 }
 

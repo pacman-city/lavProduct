@@ -30,6 +30,5 @@
         "> 1%"
     ],
     "dependencies": {
-        "hamburgers": "^1.1.3"
     }
 }

@@ -1,27 +1,54 @@
 .partners {
     margin-top: 100px;
+    overflow: hidden;
 
     h2 {
+        margin-bottom: 100px;
         @extend %bold46;
         text-align: center;
         max-width: unset;
-    }
-
-    &__row {
-        margin-top: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    img {
-        height: 64px;
-        width: auto;
     }
 
     .btn-solid {
         display: flex;
         margin: 110px auto 0;
         padding: 20px 40px;
+    }
+
+    &__row {
+        display: flex;
+
+        animation: partnersGlider 15s linear infinite alternate both;
+
+        @keyframes partnersGlider {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(calc(100% - 2506px));
+            }
+        }
+
+        span {
+            font-size: 70px;
+            line-height: 70px;
+        }
+
+        span:not(:last-of-type) {
+            margin-right: 100px;
+        }
+
+        img {
+            height: 70px;
+            width: auto;
+            margin-right: 100px;
+            user-select: none;
+        }
+    }
+
+    &__row_lower {
+        animation-direction: alternate-reverse;
+        margin-top: 125px;
     }
 }
