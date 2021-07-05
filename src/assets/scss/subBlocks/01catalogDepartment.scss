@@ -78,10 +78,15 @@
         grid-gap: 30px;
 
         background: no-repeat top center/100% url(../images/background/catalogTop.jpg);
+
+        &.department__cards_middle {
+            background: no-repeat top center/100% url(../images/background/catalogMiddle.jpg);
+        }
+
+        &.department__cards_bottom {
+            background: no-repeat top center/100% url(../images/background/catalogBottom.jpg);
+        }
     }
-
-
-
 
     @media screen and (max-width: $desktopWidth) {
         margin-top: 0;
