@@ -149,3 +149,67 @@ textarea {
     @extend %bold20;
     color: $white;
 }
+
+.btn-nav {
+    @extend %bold18;
+    border: 1px solid $accentColor2;
+    border-radius: 25px;
+
+
+    &:hover {
+        transition: color 0.1s ease-out;
+        color: $accentColor2;
+    }
+
+    &.active {
+        color: $white;
+        background: $accentColor2;
+    }
+}
+
+.btn-circle {
+    border-radius: 50%;
+    box-shadow: 0 10px 30px 0 #674B2435;
+
+    &:hover {
+        box-shadow: 0 0 0 0 #674B2455;
+        transition: box-shadow 0.1s ease-out;
+
+        &::before {
+            transition: color 0.2s ease-out;
+            color: $accentColor1;
+        }
+
+        &::after {
+            color: $white;
+        }
+    }
+}
+
+.btn-download {
+    padding: 10px 0;
+    vertical-align: top;
+    @extend %bold18;
+
+    svg {
+        margin-right: 15px;
+        width: 34px;
+        height: 34px;
+    }
+
+    &:hover svg {
+        path:last-of-type {
+            animation: btnDownload 0.4s cubic-bezier(.7, 1.57, .54, 1.05) forwards;
+
+            @keyframes btnDownload {
+                from {
+                    transform: translateY(-25px);
+                }
+
+                to {
+                    transform: translateY(0px);
+                }
+            }
+        }
+    }
+}

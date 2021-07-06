@@ -70,6 +70,20 @@ $smPhoneWidth : 575.98px;
     }
 }
 
+%bold22 {
+    font-size: 22px;
+    font-weight: 700;
+    color: $black;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 18px;
+    }
+}
+
 %bold24 {
     font-size: 24px;
     font-weight: 700;
@@ -84,6 +98,21 @@ $smPhoneWidth : 575.98px;
     font-size: 26px;
     font-weight: 700;
     color: $black;
+
+    @media screen and (max-width: $phoneWidth) {
+        font-size: 22px;
+    }
+}
+
+%bold34 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: $black;
+
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 27px;
+    }
 
     @media screen and (max-width: $phoneWidth) {
         font-size: 22px;
