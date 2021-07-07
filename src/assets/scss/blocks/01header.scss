@@ -13,7 +13,7 @@
         display: flex;
         align-items: center;
 
-        a {
+        button {
             padding: 18px;
             @extend %bold18;
             transition: all 0.1s ease-out;
@@ -63,7 +63,7 @@
             visibility: hidden;
             transition: transform 0.5s linear;
 
-            a {
+            button {
                 color: transparent;
                 width: 95%;
             }
@@ -92,7 +92,7 @@
 
             transition: transform 0.3s linear, background-color 0.2s linear 0.1s;
 
-            a {
+            button {
                 transition: color 0.1s linear 0.2s;
                 color: $black;
             }

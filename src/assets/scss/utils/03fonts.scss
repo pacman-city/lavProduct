@@ -6,7 +6,7 @@
 
     //--------------------------------------------------------------------- Bellotta Text
     src: local('Bellotta Text Regular'), local('Bellotta Text'),
-        url('../fonts/BellotaText-Regular.ttf') format('truetype');
+        url('../fonts/BellotaText-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -17,7 +17,7 @@
 
     //--------------------------------------------------------------------- Bellotta Text
     src: local('Bellotta Text Bold'), local('Bellotta Text'),
-        url('../fonts/BellotaText-Bold.ttf') format('truetype');
+        url('../fonts/BellotaText-Bold.woff') format('woff');
 }
 
 @font-face {
