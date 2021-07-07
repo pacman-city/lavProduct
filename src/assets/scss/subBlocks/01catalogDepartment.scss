@@ -77,14 +77,14 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 30px;
 
-        background: no-repeat top center/100% url(../images/background/catalogTop.jpg);
+        background: no-repeat top center/100% url(../images/background/catalogTop.webp);
 
         &.department__cards_middle {
-            background: no-repeat top center/100% url(../images/background/catalogMiddle.jpg);
+            background: no-repeat top center/100% url(../images/background/catalogMiddle.webp);
         }
 
         &.department__cards_bottom {
-            background: no-repeat top center/100% url(../images/background/catalogBottom.jpg);
+            background: no-repeat top center/100% url(../images/background/catalogBottom.webp);
         }
     }
 

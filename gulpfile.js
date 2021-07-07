@@ -21,7 +21,7 @@ const notify = require("gulp-notify");
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const browserSync = require("browser-sync").create();
-
+const sourcemaps = require('gulp-sourcemaps'); // модуль для генерации карты исходных файлов
 
 
 /* Paths */
@@ -61,8 +61,17 @@ const path = {
 function serve() {
   browserSync.init({
     server: {
-      baseDir: "./" + distPath // dist/*.html
-    }
+      baseDir: "./" + distPath,
+      index: "index.html"
+    },
+    tunnel: false,
+    host: 'localhost',
+    notify: false,
+    port: 9000,
+    // logPrefix: "hello"
+    // server: {
+    //   baseDir: "./build"
+    // },
   });
 }
 
@@ -95,6 +104,7 @@ function css(cb) {
   return src(path.src.css, {
       base: srcPath + "assets/scss/"
     })
+    .pipe(sourcemaps.init()) // sourse map
     .pipe(plumber({
       errorHandler: function(err) {
         notify.onError({
@@ -110,15 +120,16 @@ function css(cb) {
     .pipe(autoprefixer({
       cascade: true
     }))
-    .pipe(cssbeautify())
-    .pipe(dest(path.build.css))
+    // .pipe(cssbeautify())// отключил style.css
+    // .pipe(dest(path.build.css))
     .pipe(cleanCSS({
-      compatibility: '*' // default ie10+    compatibility: 'ie9'
+      compatibility: '*' // * === default(ie10+)    compatibility: 'ie9'
     }))
     .pipe(rename({
       suffix: ".min",
       extname: ".css"
     }))
+    .pipe(sourcemaps.write('./')) // sourse map
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({
       stream: true
@@ -126,6 +137,7 @@ function css(cb) {
 
   cb();
 }
+
 
 function cssWatch(cb) {
   return src(path.src.css, {
@@ -225,13 +237,13 @@ function images(cb) {
       imagemin.gifsicle({
         interlaced: true
       }),
-      imagemin.mozjpeg({
-        quality: 80,
-        progressive: true
-      }),
-      imagemin.optipng({
-        optimizationLevel: 5
-      }),
+      // imagemin.mozjpeg({
+      //   quality: 80,
+      //   progressive: true
+      // }),
+      // imagemin.optipng({
+      //   optimizationLevel: 5
+      // }),
       imagemin.svgo({
         plugins: [{
             removeViewBox: true
@@ -242,13 +254,13 @@ function images(cb) {
         ]
       })
     ]))
-    .pipe(dest(path.build.images))
     .pipe(webp({
       // lossless: true,
       quality: 80,
       alphaQuality: 80
     }))
-    .pipe(dest(path.build.webp))
+    .pipe(dest(path.build.images))
+    // .pipe(dest(path.build.webp))
     .pipe(browserSync.reload({
       stream: true
     }));

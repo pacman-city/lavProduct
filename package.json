@@ -23,11 +23,21 @@
         "gulp-webp": "^4.0.1",
         "panini": "^1.7.1",
         "webpack": "^5.38.1",
-        "webpack-stream": "^6.1.2"
+        "webpack-stream": "^6.1.2",
+        "gulp-sourcemaps": "^3.0.0"
     },
     "browserslist": [
-        "last 5 version",
-        "> 1%"
+        ">= 1%",
+        "last 2 major versions",
+        "not dead",
+        "Chrome >= 60",
+        "Firefox >= 60",
+        "Firefox ESR",
+        "iOS >= 12",
+        "Safari >= 12",
+        "not Explorer <= 11",
+        "not op_mini all",
+        "not Explorer > 0"
     ],
     "dependencies": {
     }
