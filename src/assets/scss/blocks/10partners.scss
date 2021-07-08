@@ -17,16 +17,15 @@
 
     &__row {
         display: flex;
-
         animation: partnersGlider 15s linear infinite alternate both;
 
         @keyframes partnersGlider {
             from {
-                transform: translateX(0);
+                transform: translateX(-800px);
             }
 
             to {
-                transform: translateX(calc(100% - 2506px));
+                transform: translateX(0px);
             }
         }
 

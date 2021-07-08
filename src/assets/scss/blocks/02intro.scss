@@ -1,8 +1,7 @@
 .intro {
     height: 842px;
     padding-top: 145px;
-
-    background: no-repeat center/cover url(../images/svg/curve.svg);
+    background: no-repeat bottom center/cover url(../images/svg/curve.svg);
 
     .container {
         display: grid;
@@ -55,8 +54,9 @@
 
     @media screen and (max-width: $desktopWidth) {
         max-height: 100vh;
-        min-height: 750px;
+        min-height: 700px;
         padding-top: 115px;
+        background-position: bottom 50px center;
 
         button {
             margin-top: 65px;
@@ -74,6 +74,8 @@
     }
 
     @media screen and (max-width: $phoneWidth) {
+        background-position: bottom 100px center;
+
         button {
             padding: 18px 15px;
         }

@@ -1,5 +1,24 @@
+.hamburger-layover {
+    display: none;
+
+    @media screen and (max-width: $desktopWidth) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.22);
+
+        &.open {
+            display: block;
+        }
+    }
+}
+
 .header {
     position: absolute;
+    z-index: 2;
     width: 100%;
 
     .container {
@@ -29,9 +48,25 @@
         }
     }
 
+    .icon-logo {
+        padding: 4px 8px;
+        margin-left: -8px;
+
+        &::before {
+            @media screen and (max-width: $desktopWidth) {
+                font-size: 65px;
+            }
+
+            @media screen and (max-width: $phoneWidth) {
+                font-size: 45px;
+            }
+        }
+    }
+
     .btn-orderCall {
         margin-left: auto;
         align-self: flex-start;
+        display: inline-block;
     }
 
     .hamburger {
@@ -53,12 +88,12 @@
             width: 100%;
             top: 90px;
             left: 0;
-            padding-top: 30px;
+            padding-bottom: 30px;
             margin-left: 0;
 
             flex-direction: column;
 
-            transform: translateY(300px);
+            transform: translateY(40px);
 
             visibility: hidden;
             transition: transform 0.5s linear;
@@ -66,6 +101,32 @@
             button {
                 color: transparent;
                 width: 95%;
+            }
+        }
+
+        &.menu-open {
+            background: $accentColor3;
+
+            .header__menu {
+                transform: translate(0);
+                visibility: visible;
+                background: $accentColor3;
+                transition: transform 0.2s ease-in, background-color 0.15s ease-in;
+
+                button {
+                    color: $black;
+
+                    &:active {
+                        color: $white;
+                    }
+                }
+            }
+
+            @media screen and (max-width: $phoneWidth) {
+                .header__menu {
+                    top: 72px;
+                    padding-bottom: 10px;
+                }
             }
         }
     }
@@ -80,27 +141,17 @@
         .hamburger {
             margin-left: 0;
         }
-    }
 
-    &.menu-open {
-        background: $accentColor3;
+        .btn-orderCall {
 
-        .header__menu {
-            transform: translate(0);
-            visibility: visible;
-            background: $accentColor3;
-
-            transition: transform 0.3s linear, background-color 0.2s linear 0.1s;
-
+            b,
+            a:first-of-type,
             button {
-                transition: color 0.1s linear 0.2s;
-                color: $black;
+                display: none;
             }
-        }
 
-        @media screen and (max-width: $phoneWidth) {
-            .header__menu {
-                top: 80px;
+            a {
+                border-radius: 5px;
             }
         }
     }

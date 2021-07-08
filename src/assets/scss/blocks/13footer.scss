@@ -21,9 +21,13 @@
     .btn-orderCall {
         place-self: start end;
 
-        p {
+        button {
             font-size: 18px;
             color: $accentColor2;
+
+            &:active {
+                color: $white;
+            }
         }
     }
 
@@ -72,11 +76,11 @@
         }
 
         .btn-orderCall {
-            margin: 20px 0;
-        }
+            margin: 20px 0 20px -10px;
 
-        .btn-orderCall p {
-            text-align: left;
+            button {
+                align-self: flex-start;
+            }
         }
     }
 }

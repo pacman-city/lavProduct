@@ -8,12 +8,30 @@ import Modal from './modules/modal';
 document.addEventListener('DOMContentLoaded', () => {
 
   const hamburgerBtn = document.querySelector('.hamburger');
+  const hamburgerLayover = document.querySelector('.hamburger-layover');
   const header = document.querySelector('.header');
-  const toggleMenu = function() {
-    this.classList.toggle('active');
+  const toggleMenu = () => {
+    hamburgerBtn.classList.toggle('active');
+    hamburgerLayover.classList.toggle('open');
     header.classList.toggle('menu-open');
+
+    document.addEventListener('scroll', () => {
+      hamburgerLayover.classList.remove('open');
+      header.classList.remove('menu-open');
+      hamburgerBtn.classList.remove('active');
+      console.log('scroll');
+    }, {
+      once: true
+    })
   }
   hamburgerBtn.addEventListener('click', toggleMenu);
+  hamburgerLayover.addEventListener('click', toggleMenu);
+
+  ////////////////////////////////////////////////////////////////
+  document.querySelector('.requisites').addEventListener('mouseenter', () => {
+    console.log('click');
+    document.querySelector('.icon-map-pin').style = "opacity: 0; transition: opacity 1.5s linear";
+  })
 
   ////////////////////////////////////////////////////////////////
   document.querySelector('.icon-button-up').addEventListener('click', () => {
@@ -46,10 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ////////////////////////////////////////////////////////////////
   new Modal(['commercial', 'partner', 'question', 'call', 'thanks', 'error']);
 
-
-
-
-
   ////////////////////////////////////////////////////////////////
   document.querySelectorAll('.sertificate__modal').forEach(item => addSertificateSliders(item));
 
@@ -61,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     swipeThreshold: 40,
     dragThreshold: 80,
     gap: 30,
-    animationDuration: 700,
+    animationDuration: 500,
     animationTimingFunc: "ease-out",
     fucusAt: 'center',
   };

@@ -24,11 +24,21 @@
 
     li {
         border-bottom: 1px solid #EEDFCD;
+        cursor: pointer;
+
+        @extend %no-select;
 
         &.open {
+            cursor: default;
+
             p {
                 height: 90px;
                 visibility: visible;
+                opacity: 1;
+            }
+
+            .icon-cross {
+                transform: rotate(0deg);
             }
         }
     }
@@ -42,12 +52,16 @@
 
         @extend %bold24;
         color: $accentColor2;
+
+        user-select: none;
     }
 
     .icon-cross {
         margin-left: 90px;
         transform: rotateZ(45deg);
         margin-right: 20px;
+
+        transition: transform 0.2s;
     }
 
     p {
@@ -56,6 +70,9 @@
         height: 0;
         padding: 0;
         visibility: hidden;
+
+        transition: height 0.2s, opacity 0.1s linear 0.1s;
+        opacity: 0;
 
         @extend %bold20;
         line-height: 1.4;
@@ -91,13 +108,13 @@
         }
 
         li.open p {
-            height: 150px;
+            height: 120px;
         }
     }
 
-    @media screen and (max-width: $smPhoneWidth) {
+    @media screen and (max-width: 320px) {
         li.open p {
-            height: 180px;
+            height: 150px;
         }
     }
 }

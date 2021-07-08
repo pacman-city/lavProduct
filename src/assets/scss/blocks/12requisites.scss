@@ -15,12 +15,14 @@
         padding: 50px;
         width: 100%;
         position: relative;
+        pointer-events: none;
     }
 
     &__content {
         padding: 50px;
         width: 485px;
         background-color: $white;
+        pointer-events: all;
     }
 
     h2 {
