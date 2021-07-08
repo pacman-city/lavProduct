@@ -1,3 +1,6 @@
+@import "@glidejs/glide/src/assets/sass/glide.core";
+@import "@glidejs/glide/src/assets/sass/glide.theme";
+
 /* Page setups */
 @import './utils/01reset';
 @import './utils/02vars_mixins';
@@ -9,8 +12,9 @@
 @import "./subBlocks/01catalogDepartment.scss";
 @import "./subBlocks/02productCard.scss";
 @import './subBlocks/03buttons.scss';
-@import './subBlocks/04productPage.scss';
-@import './subBlocks/05modal.scss';
+@import './subBlocks/04modal.scss';
+@import './subBlocks/05productModal.scss';
+@import './subBlocks/06sertificatesModal.scss';
 
 
 /* Blocks */
@@ -18,7 +22,7 @@
 @import "./blocks/02intro.scss";
 @import "./blocks/03numerals.scss";
 @import "./blocks/04catalog.scss";
-@import "./blocks/05license.scss";
+@import "./blocks/05licence.scss";
 @import "./blocks/06collaboration.scss";
 @import "./blocks/07assurance.scss";
 @import "./blocks/08benefits.scss";

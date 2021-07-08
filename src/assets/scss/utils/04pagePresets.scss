@@ -26,22 +26,18 @@ body {
 
 main {
     margin: 0 auto;
-    max-width: 1920px;
+    // max-width: 1920px;
     position: relative;
 }
 
-.container,
-.containerFluid {
+.container {
+    margin: 0 auto;
     padding: 0 30px;
+    max-width: 1360px;
 
     @media screen and (max-width: $phoneWidth) {
         padding: 0 15px;
     }
-}
-
-.container {
-    max-width: 1360px;
-    margin: 0 auto;
 }
 
 .section {

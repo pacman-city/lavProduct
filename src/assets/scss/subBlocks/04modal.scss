@@ -1,0 +1,222 @@
+.modal {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+
+    overflow-y: auto;
+    height: 100%;
+    overflow-y: auto;
+    min-height: auto;
+
+    &.open {
+        padding: 15px;
+        display: grid;
+        place-items: center;
+        background: rgba(0, 0, 0, 0.22);
+
+        .modal__container {
+            animation: modal-container 0.2s linear 0.2s forwards;
+
+            @keyframes modal-container {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            background-color: $white;
+            animation: fadeInDown 0.4s ease-out forwards;
+
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translate3d(0, -10%, 0);
+                }
+
+                40% {
+                    opacity: 0.3;
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+    }
+
+    &__container {
+        padding: 60px;
+        width: 585px;
+        border-radius: 3px;
+        position: relative;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #5A616B;
+        border-radius: 50%;
+
+        &:hover {
+            color: $accentColor1;
+            box-shadow: 0 0 5px 2px $accentColor3;
+        }
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        @extend %bold36;
+    }
+
+    &__sup-title {
+        margin: 0 auto 50px;
+        max-width: 320px;
+        text-align: center;
+        @extend %regular18;
+        color: $text;
+    }
+
+    input,
+    textarea,
+    button[type="submit"] {
+        width: 100%;
+    }
+
+    input {
+        padding: 21px 14px;
+        margin-bottom: 25px;
+        border: 1px solid #DDD8D1;
+        border-radius: 3px;
+        @extend %regular18;
+        color: $text;
+
+        &::placeholder {
+            @extend %regular18;
+            color: $text;
+        }
+    }
+
+    .btn-solid {
+        padding: 18px;
+    }
+
+    textarea {
+        margin-bottom: 40px;
+        padding: 21px 14px;
+        height: 130px;
+        display: block;
+        border: 1px solid #DDD8D1;
+        border-radius: 3px;
+        @extend %regular18;
+        color: $text;
+
+        &::placeholder {
+            @extend %regular18;
+            color: $text;
+        }
+    }
+
+    &__policy {
+        max-width: 350px;
+        padding-top: 20px;
+        font-size: 14px;
+        color: $textDimmed;
+    }
+
+    &__thanks {
+        margin: 10px auto 0;
+        display: block;
+    }
+
+    &__thanks-title {
+        margin-top: 20px;
+    }
+
+    &__thanks-sup-title {
+        text-align: center;
+        @extend %bold24;
+    }
+
+    &__thanks-text {
+        margin: 35px auto 10px;
+        max-width: 260px;
+        text-align: center;
+        @extend %regular18;
+        color: $text;
+    }
+
+    .modal_error {
+        height: 150px;
+        display: grid;
+        place-items: center;
+    }
+
+    @media (max-width: $desktopWidth) {
+        &__container {
+            padding: 40px;
+            width: 500px;
+        }
+
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        &__sup-title {
+            margin: 0 auto 10px;
+            line-height: 1.2;
+        }
+
+        input {
+            padding: 16px 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn-solid {
+            padding: 16px;
+        }
+
+        textarea {
+            margin-bottom: 30px;
+            padding: 8px 14px;
+            height: 100px;
+        }
+
+        &__policy {
+            padding-top: 15px;
+            line-height: 1.2;
+        }
+    }
+
+    @media (max-width: $phoneWidth) {
+        &__container {
+            padding: 45px 20px 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-solid {
+            padding: 12px;
+        }
+
+        textarea {
+            margin-bottom: 20px;
+            padding: 5px 10px;
+            height: 90px;
+        }
+
+        &__policy {
+            padding-top: 10px;
+        }
+    }
+}

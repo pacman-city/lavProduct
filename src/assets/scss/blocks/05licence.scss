@@ -1,0 +1,72 @@
+.licence {
+    margin-top: 50px;
+    background: linear-gradient(to bottom, white 30px, #FAF6EF 30px, #FAF6EF 395px, white 395px);
+
+    .container {
+        height: 425px;
+
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+
+    h2 {
+        padding-top: 90px;
+        max-width: 600px;
+
+        @extend %bold36;
+        line-height: 1.3;
+    }
+
+    button {
+        margin-top: 45px;
+        padding: 15px 40px;
+    }
+
+    &__image {
+        justify-self: end;
+        margin-right: 30px;
+        width: 552px;
+        height: 425px;
+        position: relative;
+
+        svg,
+        div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 4px 4px 10px 0 #00000026;
+        }
+
+        div {
+            background: no-repeat top 90% center/98% url(../images/background/licence.webp);
+        }
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        &__image {
+            width: 400px;
+            justify-self: center;
+            margin-right: 0;
+
+            svg,
+            div {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        &__image {
+            display: none;
+        }
+    }
+}
