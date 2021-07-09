@@ -1,134 +1,121 @@
-<section class="product" style="display:none">
+<section class="product">
 
-  <div class="product__image">
-    <img src="./assets/images/products/FH_72.webp" alt="butter">
-  </div>
+  <button class="btn-close" type="button">
+    <svg fill="none" width="30" height="30" viewBox="0 0 30 30">
+      <path d="m16.66 15 13-13A1.17 1.17 0 1 0 28 .34l-13 13-13-13A1.17 1.17 0 1 0 .34 2l13 13-13 13A1.17 1.17 0 0 0 2 29.66l13-13 13 13a1.17 1.17 0 0 0 1.66 0c.45-.46.45-1.2 0-1.66l-13-13Z" fill="CurrentColor" />
+    </svg>
+  </button>
 
+  <div class="product__container">
 
-  <div class="product__info">
-    <h1>ТМ «Фермерское хозяйство» 82,5% 180 г.</h1>
-    <p class="product__name">Масло сливочное крестьянское сладко-сливочное несоленое</p>
-
-
-    <ul class="product__package">
-      <li>Упаковка</li>
-      <li>линкавер</li>
-      <li>Количество в&#160;коробке</li>
-      <li>16 шт</li>
-      <li>ГОСТ</li>
-      <li>32261-2013</li>
-      <li>Штрих-код</li>
-      <li>4 607123 902752</li>
-    </ul><!-- end package row -->
-
-    <h2>Срок хранения</h2>
-    <ul class="product__storage">
-      <li>–(16±2)°С</li>
-      <li>120 суток</li>
-      <li>–(6±3)°С</li>
-      <li>90 суток</li>
-      <li>+(3±2)°С</li>
-      <li>60 суток (при влажности воздуха не более 90%)</li>
-    </ul><!-- end storage row -->
-
-    <h2>Пищевая ценность на 100г продукта</h2>
-    <div class="product__nutrients">
-      <p>
-        <b>82,5%</b>
-        Жир
-        <button class="product__nutrientsButton">
-          <svg width="20" height="20" fill="none">
-            <path fill="#E3A156" d="M8.07 12.84a4.5 4.5 0 01-.12-1 2.36 2.36 0 011.12-2.12l.64-.35.32-.18c.63-.34 1.1-.7 1.4-1.07.3-.37.44-.78.44-1.22A2.02 2.02 0 009.8 4.82c-.48 0-.9.11-1.24.32-.34.2-.53.44-.55.7v.06c0 .18.08.28.24.32L7.97 7.3c-.36-.04-.66-.2-.9-.46-.23-.28-.35-.6-.35-.98 0-.42.14-.8.4-1.15.28-.35.65-.62 1.12-.81.47-.2 1-.3 1.59-.3.6 0 1.16.16 1.68.47.5.3.91.71 1.21 1.23.31.52.47 1.08.47 1.68 0 .65-.2 1.24-.61 1.75-.4.5-1.04.98-1.9 1.45-.34.19-.66.4-.98.63-.37.28-.56.66-.56 1.15 0 .21.04.43.11.64l-1.18.24zm.83 2.37a.8.8 0 01-.58-.26.8.8 0 010-1.17.8.8 0 011.17 0 .8.8 0 01.27.6c0 .2-.09.4-.27.57a.81.81 0 01-.6.26z" />
-            <circle cx="10" cy="10" r="9.5" stroke="#E3A156" />
-          </svg>
-        </button>
-      </p>
-      <p>
-        <b>0,6 г</b>
-        Белок
-      </p>
-      <p>
-        <b>0,8 г</b>
-        Углеводы
-      </p>
-
-      <div>
-        <p>
-          <b>748</b>
-          Ккал
-        </p>
-        <svg width="12" height="50" viewBox="0 0 13 50">
-          <line x1="12" y1="1" x2="2" y2="48" stroke="#998E88" />
-        </svg>
-        <p>
-          <b>3132</b>
-          кДж
-        </p>
+    <div class="container">
+      <div class="product__image">
+        <div class="product__image-img" style="background-image: url(./assets/images/products/FH_72.webp)"></div>
       </div>
-    </div><!-- end nutrients row -->
 
-    <div class="product__controls">
-      <button class="btn-solid" type="button" data-commercial>Получить коммерческое предложение</button>
-      <button class="btn-download">
-        <svg viewBox="0 0 24 24">
-          <path fill="#E3A156" d="M22.53 14.95a.95.95 0 00-.96.96v5.66H2.43V15.9a.95.95 0 10-1.91 0v6.62c0 .53.42.95.95.95h21.06c.53 0 .95-.42.95-.95V15.9a.95.95 0 00-.95-.96z" />
-          <path fill="#E3A156" d="M11.33 16.53a.94.94 0 001.35 0l5.82-5.81a.96.96 0 10-1.35-1.36l-4.2 4.19V1.4a.95.95 0 10-1.9 0v12.14l-4.2-4.18A.96.96 0 105.5 10.7l5.83 5.82z" />
-        </svg>
-        Скачать каталог
-      </button>
-    </div>
-
-  </div><!-- end product info column -->
+      <div class="product__info">
+        <h1>ТМ «Фермерское хозяйство» 82,5% 180 г.</h1>
+        <p class="product__name">Масло сливочное крестьянское сладко-сливочное несоленое</p>
 
 
-  <div class="product__slider">
-    <div class="product__sliderControls">
-      <button class="btn-circle icon-button-left"></button>
-      <button class="btn-circle icon-button-right"></button>
-    </div>
+        <ul class="product__package">
+          <li>Упаковка</li>
+          <li>линкавер</li>
+          <li>Количество в&#160;коробке</li>
+          <li>16 шт</li>
+          <li>ГОСТ</li>
+          <li>32261-2013</li>
+          <li>Штрих-код</li>
+          <li>4 607123 902752</li>
+        </ul><!-- end package row -->
 
-    <div class="product__sliderTabs">
-      <button class="btn-nav">«Фермерское хозяйство» 72,5% 180 г</button>
-      <!-- <button class="btn-nav">«Фермерское хозяйство» 82,5% 180 г</button>
-      <button class="btn-nav">«Фермерское хозяйство» 72,5% 400 г</button>
-      <button class="btn-nav">«Фермерское хозяйство» 82,5% 400 г</button>
-      <button class="btn-nav">«Фермерское хозяйство» 72,5% 10 кг</button>
-      <button class="btn-nav">«Фермерское хозяйство» 82,5% 10 кг</button>
-      <button class="btn-nav">«Купавушка» 72,5% 180 г</button>
-      <button class="btn-nav">«Купавушка» 82,5% 180 г</button>
-      <button class="btn-nav">«Купавушка» 72,5% 10 кг</button>
-      <button class="btn-nav">«Купавушка» 82,5% 10 кг</button>
-      <button class="btn-nav">Спред «Крестьянский» 72,5% 180 г</button>
-      <button class="btn-nav">Спред «Крестьянский» 72,5% 500 г</button>
-      <button class="btn-nav">Спред «Крестьянский» 72,5% 10 кг</button> -->
-    </div>
+        <h2>Срок хранения</h2>
+        <ul class="product__storage">
+          <li>–(16±2)°С</li>
+          <li>120 суток</li>
+          <li>–(6±3)°С</li>
+          <li>90 суток</li>
+          <li>+(3±2)°С</li>
+          <li>60 суток (при влажности воздуха не более 90%)</li>
+        </ul><!-- end storage row -->
 
-  </div>
+        <h2>Пищевая ценность на 100г продукта</h2>
+        <div class="product__nutrients">
+          <p>
+            <b>82,5%</b>
+            Жир
+            <button class="product__nutrientsButton">
+              <svg width="20" height="20" fill="none">
+                <path fill="#E3A156" d="M8.07 12.84a4.5 4.5 0 01-.12-1 2.36 2.36 0 011.12-2.12l.64-.35.32-.18c.63-.34 1.1-.7 1.4-1.07.3-.37.44-.78.44-1.22A2.02 2.02 0 009.8 4.82c-.48 0-.9.11-1.24.32-.34.2-.53.44-.55.7v.06c0 .18.08.28.24.32L7.97 7.3c-.36-.04-.66-.2-.9-.46-.23-.28-.35-.6-.35-.98 0-.42.14-.8.4-1.15.28-.35.65-.62 1.12-.81.47-.2 1-.3 1.59-.3.6 0 1.16.16 1.68.47.5.3.91.71 1.21 1.23.31.52.47 1.08.47 1.68 0 .65-.2 1.24-.61 1.75-.4.5-1.04.98-1.9 1.45-.34.19-.66.4-.98.63-.37.28-.56.66-.56 1.15 0 .21.04.43.11.64l-1.18.24zm.83 2.37a.8.8 0 01-.58-.26.8.8 0 010-1.17.8.8 0 011.17 0 .8.8 0 01.27.6c0 .2-.09.4-.27.57a.81.81 0 01-.6.26z" />
+                <circle cx="10" cy="10" r="9.5" stroke="#E3A156" />
+              </svg>
+            </button>
+          </p>
+          <p>
+            <b>0,6 г</b>
+            Белок
+          </p>
+          <p>
+            <b>0,8 г</b>
+            Углеводы
+          </p>
 
+          <div>
+            <p>
+              <b>748</b>
+              Ккал
+            </p>
+            <svg width="12" height="50" viewBox="0 0 13 50">
+              <line x1="12" y1="1" x2="2" y2="48" stroke="#998E88" />
+            </svg>
+            <p>
+              <b>3132</b>
+              кДж
+            </p>
+          </div>
+        </div><!-- end nutrients row -->
+
+        <div class="product__controls">
+          <button class="btn-solid" type="button" data-commercial>Получить коммерческое предложение</button>
+          <a class="btn-download" href='./file.pdf' download>
+            <svg viewBox="0 0 24 24">
+              <path fill="#E3A156" d="M22.53 14.95a.95.95 0 00-.96.96v5.66H2.43V15.9a.95.95 0 10-1.91 0v6.62c0 .53.42.95.95.95h21.06c.53 0 .95-.42.95-.95V15.9a.95.95 0 00-.95-.96z" />
+              <path fill="#E3A156" d="M11.33 16.53a.94.94 0 001.35 0l5.82-5.81a.96.96 0 10-1.35-1.36l-4.2 4.19V1.4a.95.95 0 10-1.9 0v12.14l-4.2-4.18A.96.96 0 105.5 10.7l5.83 5.82z" />
+            </svg>
+            Скачать каталог
+          </a>
+        </div>
+
+      </div><!-- end product info column -->
+    </div><!-- end container -->
+
+    <div class="product__slider">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <div class="glide__slides">
+            <button class="glide__slide">«Фермерское хозяйство» 72,5% 180 г</button>
+            <button class="glide__slide">«Фермерское хозяйство» 82,5% 180 г</button>
+            <button class="glide__slide">«Фермерское хозяйство» 72,5% 400 г</button>
+            <button class="glide__slide">«Фермерское хозяйство» 82,5% 400 г</button>
+            <button class="glide__slide">«Фермерское хозяйство» 72,5% 10 кг</button>
+            <button class="glide__slide">«Фермерское хозяйство» 82,5% 10 кг</button>
+            <button class="glide__slide">«Купавушка» 72,5% 180 г</button>
+            <button class="glide__slide">«Купавушка» 82,5% 180 г</button>
+            <button class="glide__slide">«Купавушка» 72,5% 10 кг</button>
+            <button class="glide__slide">«Купавушка» 82,5% 10 кг</button>
+            <button class="glide__slide">Спред «Крестьянский» 72,5% 180 г</button>
+            <button class="glide__slide">Спред «Крестьянский» 72,5% 500 г</button>
+            <button class="glide__slide">Спред «Крестьянский» 72,5% 10 кг</button>
+          </div>
+        </div>
+
+        <div class="product__sliderControls" data-glide-el="controls">
+          <button class="btn-circle icon-button-left" data-glide-dir="<"></button>
+          <button class="btn-circle icon-button-right" data-glide-dir=">"></button>
+        </div>
+
+      </div>
+    </div><!-- slider -->
+
+  </div><!-- product container -->
 </section>
-
-
-
-<!-- <div class="glide">
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-      <li class="glide__slide">
-        <img src="./assets/images/licence/licence/license1.webp" alt="sertificate">
-      </li>
-      <li class="glide__slide">
-        <img src="./assets/images/licence/licence/license2.webp" alt="sertificate">
-      </li>
-      <li class="glide__slide">
-        <img src="./assets/images/licence/licence/license3.webp" alt="sertificate">
-      </li>
-      <li class="glide__slide">
-        <img src="./assets/images/licence/licence/license4.webp" alt="sertificate">
-      </li>
-    </ul>
-  </div>
-
-  <div class="glide__arrows" data-glide-el="controls">
-    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-  </div>
-</div> -->

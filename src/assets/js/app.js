@@ -1,11 +1,14 @@
 import Glide from '@glidejs/glide';
-// import customSelect from 'custom-select';
-// https://github.com/custom-select/custom-select
 
 import Modal from './modules/modal';
-
+import updateProductCard from './modules/card';
+import {
+  createProductCards
+} from './modules/card';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  createProductCards();
 
   const hamburgerBtn = document.querySelector('.hamburger');
   const hamburgerLayover = document.querySelector('.hamburger-layover');
@@ -147,6 +150,75 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'instant'
     });
   });
+
+  document.addEventListener('focus', (e) => console.log(e.target));
+
+  // modal-product:
+  const productButton = document.querySelectorAll('[data-product]');
+  const productCloseButton = document.querySelector('.product .btn-close');
+  const productModal = document.querySelector('.product');
+
+  productButton.forEach(item => item.addEventListener('click', function() {
+    windowScroll = window.scrollY;
+
+    updateProductCard(this.getAttribute('data-product'));
+
+    document.querySelector('main').style.display = 'none';
+    productModal.style.display = 'block';
+    new Glide('.product__slider .glide', options1).mount();
+
+  }));
+
+  productCloseButton.addEventListener('click', () => {
+    document.querySelector('main').style.display = '';
+    productModal.style.display = '';
+    scrollTo({
+      left: 0,
+      top: windowScroll,
+      behavior: 'instant'
+    });
+  })
+
+  const options1 = {
+    type: 'slider',
+    rewind: false,
+    startAt: 0,
+    bound: true,
+    perView: 3.9,
+    swipeThreshold: 40,
+    dragThreshold: 80,
+    gap: 30,
+    animationDuration: 300,
+    animationTimingFunc: "ease-out",
+    fucusAt: 'center',
+    breakpoints: {
+      1600: {
+        perView: 3.2
+      },
+      1280: {
+        perView: 2.6
+      },
+      1024: {
+        perView: 2.1
+      },
+      992: {
+        perView: 1.9
+      },
+      768: {
+        perView: 1.5
+      },
+      640: {
+        perView: 1.1
+      }
+    }
+  };
+
+
+
+
+
+
+
 
 
 

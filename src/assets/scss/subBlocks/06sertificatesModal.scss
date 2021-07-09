@@ -108,7 +108,7 @@
 
     &__thumbnail-container {
         grid-area: 2 / 1 / -1 / -1;
-        overflow: hidden;
+        // overflow: hidden;
 
         >div {
             margin: 5px;
@@ -120,6 +120,7 @@
         &:not(.diploma)>div>div:last-of-type {
             opacity: 0;
             transition: opacity 0s;
+            visibility: hidden;
         }
 
         >div>div {
@@ -133,6 +134,7 @@
                 >div:first-of-type {
                     transition: opacity 0s;
                     opacity: 0;
+                    visibility: hidden;
                 }
             }
         }
@@ -343,16 +345,17 @@
             max-height: 310px;
             border-radius: 3px;
             box-shadow: 0 0 5px 0 #674B2455;
+            cursor: pointer;
+
+            &:focus-visible::before {
+                outline: -webkit-focus-ring-color auto 1px;
+            }
         }
 
         >div {
             display: flex;
             align-items: center;
             justify-content: center;
-
-            img {
-                cursor: pointer;
-            }
 
             &:hover::before {
                 opacity: 1;

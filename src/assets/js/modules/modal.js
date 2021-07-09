@@ -1,6 +1,4 @@
 import axios from 'axios';
-// // https://github.com/custom-select/custom-select
-// import customSelect from 'custom-select';
 // https://www.npmjs.com/package/focus-trap
 import * as focusTrap from 'focus-trap'
 
@@ -30,6 +28,7 @@ class Modal {
         btn.addEventListener('click', () => {
           document.querySelector(`[data-modal-${item}]`).classList.add('open');
           this.trap.activate();
+          document.body.style.marginRight = `${window.innerWidth - document.body.clientWidth}px`;
           document.body.style.overflow = 'hidden';
         });
       }
@@ -39,16 +38,6 @@ class Modal {
     document.addEventListener('keydown', this.onKeyboard);
     this.allModals.forEach(item => item.addEventListener('click', this.onOverlay));
     this.forms.forEach(item => this.bindPostData(item));
-
-    // focus management - select (form - choose):
-    const chooseOptions = document.querySelectorAll('.choose .custom-select-option');
-    chooseOptions.forEach(item => item.setAttribute('tabindex', 0));
-    chooseOptions.forEach(item => item.addEventListener('focus', function() {
-      this.classList.add('choose-selected');
-    }));
-    chooseOptions.forEach(item => item.addEventListener('blur', function() {
-      this.classList.remove('choose-selected');
-    }));
   }
 
   onKeyboard(e) {
@@ -109,6 +98,7 @@ class Modal {
 
   closeModal() {
     document.body.style.overflow = '';
+    document.body.style.marginRight = "";
     document.body.style.cursor = "";
     this.allModals.forEach(item => (item) && item.classList.remove('open'));
     this.trap.deactivate();

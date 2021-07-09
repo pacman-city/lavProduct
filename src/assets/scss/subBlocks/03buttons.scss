@@ -166,23 +166,6 @@ textarea {
     color: $white;
 }
 
-.btn-nav {
-    @extend %bold18;
-    border: 1px solid $accentColor2;
-    border-radius: 25px;
-
-
-    &:hover {
-        transition: color 0.1s ease-out;
-        color: $accentColor2;
-    }
-
-    &.active {
-        color: $white;
-        background: $accentColor2;
-    }
-}
-
 .btn-circle {
     border-radius: 50%;
     box-shadow: 0 10px 30px 0 #674B2435;
