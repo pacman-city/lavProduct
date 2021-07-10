@@ -290,12 +290,10 @@ const data = {
 function updateProductCard(itemIndex) {
   let index = itemIndex.split('.');
   const dataObj = data[index[0]][index[1]];
-  document.querySelector('.product__container .container').innerHTML = `
-      <div class="product__image">
-      <div class="product__image-img" style="background-image: url(${dataObj.image})"></div>
-      </div>
 
-      <div class="product__info">
+  document.querySelector('.product__image-img').style = `background-image: url(${dataObj.image});`;
+
+  document.querySelector('[data-info]').innerHTML = `
       <h1>${dataObj.title}</h1>
       <p class="product__name">${dataObj.text}</p>
 
@@ -355,24 +353,12 @@ function updateProductCard(itemIndex) {
           </p>
         </div>
       </div>
-
-      <div class="product__controls">
-        <button class="btn-solid" type="button" data-commercial>Получить коммерческое предложение</button>
-        <a class="btn-download" href='./file.pdf' download>
-          <svg viewBox="0 0 24 24">
-            <path fill="#E3A156" d="M22.53 14.95a.95.95 0 00-.96.96v5.66H2.43V15.9a.95.95 0 10-1.91 0v6.62c0 .53.42.95.95.95h21.06c.53 0 .95-.42.95-.95V15.9a.95.95 0 00-.95-.96z" />
-            <path fill="#E3A156" d="M11.33 16.53a.94.94 0 001.35 0l5.82-5.81a.96.96 0 10-1.35-1.36l-4.2 4.19V1.4a.95.95 0 10-1.9 0v12.14l-4.2-4.18A.96.96 0 105.5 10.7l5.83 5.82z" />
-          </svg>
-          Скачать каталог
-        </a>
-      </div>
-
-      </div>
-`;
+  `;
 }
 
 function createProductCards() {
   const departments = document.querySelectorAll('.department__cards');
+  const sliderButtons = document.querySelector('.product .glide__slides');
 
   for (let i = 1; i <= 3; i++) {
     const department = departments[i - 1];
@@ -405,39 +391,15 @@ function createProductCards() {
         `;
 
       department.append(card);
+
+      const button = document.createElement('button');
+      button.setAttribute('type', 'button');
+      button.setAttribute('data-product', `${i}.${j}`);
+      button.classList.add('glide__slide');
+      button.innerHTML = `${dataObj.title} ${dataObj.fat} ${dataObj.weight}`;
+      sliderButtons.append(button);
     }
   }
-
-
-
-  // for (let i = 1; i <= 6; i++) {
-  //   const dataObj = data[1][i];
-
-  //   const card = document.createElement('button');
-  //   card.classList.add('card');
-  //   card.setAttribute('type', 'button');
-  //   card.setAttribute('data-product', `1.${i}`);
-  //   card.innerHTML = `
-  //         <div class="card__btn">
-  //           <div class="icon-btn-plus"></div>
-  //         </div>
-  //         <img src="${dataObj.image}" alt="butter brick">
-  //         <h3>${dataObj.title}</h3>
-  //         <p class="card__text">${dataObj.text}</p>
-  //         <p class="card__row">
-  //           <span class="card__weight">
-  //             <b>${dataObj.weight}</b>
-  //             Масса нетто
-  //           </span>
-  //           <span>
-  //             <b>${dataObj.fat}</b>
-  //             м.д.ж.
-  //           </span>
-  //         </p>
-  //     `;
-
-  //   el.append(card);
-  // }
 };
 
 export {

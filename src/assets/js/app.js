@@ -165,8 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('main').style.display = 'none';
     productModal.style.display = 'block';
-    new Glide('.product__slider .glide', options1).mount();
 
+    ProductSlider.enable();
   }));
 
   productCloseButton.addEventListener('click', () => {
@@ -213,13 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-
-
-
-
-
-
-
-
+  const ProductSlider = new Glide('.product__slider .glide', options1).mount().disable();
 
 })
