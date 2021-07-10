@@ -25,20 +25,20 @@
     button {
         margin-top: 28px;
         padding: 15px 20px;
-
+        border-radius: 3px;
         color: $accentColor1;
         font-size: 18px;
         font-weight: 700;
-
         background-color: #FBE3C9;
     }
 
     @media screen and (max-width: $desktopWidth) {
+        margin-top: 80px;
+
         &__cards {
-            margin: 80px auto 0;
-            max-width: 710px;
-            grid-template-columns: 1fr;
-            gap: 30px;
+            margin: 40px auto 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         &__card {
@@ -47,15 +47,23 @@
             background-color: $accentColor3;
 
             display: grid;
-            grid-template: repeat(2, auto) / 100px auto;
+            grid-template: 100px 1fr / auto auto;
         }
 
         &__icon {
-            grid-area: 2 / 1 / -1 / 2;
+            margin-top: -10px;
         }
 
         &__content {
-            grid-area: 1 / 2 / -1 / -1;
+            grid-column: 1 / span 2;
+        }
+
+        &__step {
+            margin-top: -20px;
+            margin-left: -10px;
+            font-size: 70px;
+            -webkit-text-stroke: 1.5px $accentColor1;
+            color: #FBE3C9;
         }
 
         .icon-colab1,
@@ -74,23 +82,70 @@
         .icon-colab31 {
             display: none;
         }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        &__card {
+            padding: 15px;
+            grid-template: 80px 1fr / auto auto;
+        }
+
+        &__icon {
+            margin-top: -10px;
+        }
+
+        &__step {
+            margin-top: -10px;
+            font-size: 50px;
+        }
 
         button {
-            margin-top: 10px;
+            margin-top: 40px;
+
+            &:after {
+                display: none;
+            }
         }
     }
 
-    @media screen and (max-width: $smPhoneWidth) {
-        &__card {
-            padding: 15px;
+    @media screen and (max-width: $phoneWidth) {
+        margin-top: 60px;
 
-            grid-template: repeat(2, auto) / 50px auto;
+        &__cards {
+            margin: 30px auto 0;
+            grid-template: repeat(3, 1fr) / 1fr;
+            gap: 15px;
         }
 
-        .icon-colab1,
-        .icon-colab2,
-        .icon-colab3 {
-            font-size: 40px;
+        &__card {
+            padding: 15px;
+            grid-template: auto 1fr / 45px 1fr;
+        }
+
+        .collaboration__icon {
+            margin-top: -5px;
+
+            span {
+                font-size: 35px;
+            }
+        }
+
+        &__step {
+            margin-top: -3px;
+            margin-left: 0px;
+            font-size: 25px;
+            -webkit-text-stroke: unset;
+            color: $accentColor1;
+        }
+
+        button {
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+
+            &:after {
+                display: none;
+            }
         }
     }
 }

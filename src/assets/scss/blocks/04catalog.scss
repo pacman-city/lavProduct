@@ -34,7 +34,8 @@
 
         background: no-repeat left 0 top 0/contain url(../images/background/catalogTitle.webp);
 
-        div {
+        span {
+            display: block;
             transform: rotate(-10deg);
 
             &:last-child {
@@ -58,13 +59,15 @@
     }
 
     @media screen and (max-width: $desktopWidth) {
+        margin-top: 100px;
+
         &__title {
             background: none;
             height: auto;
             width: auto;
             padding: 0;
 
-            div {
+            span {
                 transform: rotate(-5deg);
             }
         }
@@ -87,12 +90,14 @@
     }
 
     @media screen and (max-width: $phoneWidth) {
+        margin-top: 70px;
+
         &__header {
             grid-template: auto auto / 1fr;
         }
 
         &__title {
-            div {
+            span {
                 display: inline-block;
                 transform: none;
 

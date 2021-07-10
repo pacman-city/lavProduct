@@ -5,16 +5,15 @@
 @import './utils/01reset';
 @import './utils/02vars_mixins';
 @import './utils/03fonts';
-@import './utils/04pagePresets';
+@import './utils/04main';
 
 
 /* SubBlocks & elements */
 @import "./subBlocks/01catalogDepartment.scss";
 @import "./subBlocks/02productCard.scss";
-@import './subBlocks/03buttons.scss';
-@import './subBlocks/04modal.scss';
-@import './subBlocks/05productModal.scss';
-@import './subBlocks/06sertificatesModal.scss';
+@import './subBlocks/03modal.scss';
+@import './subBlocks/04productModal.scss';
+@import './subBlocks/05sertificatesModal.scss';
 
 
 /* Blocks */

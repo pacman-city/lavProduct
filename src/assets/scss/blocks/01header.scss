@@ -65,8 +65,6 @@
 
     .btn-orderCall {
         margin-left: auto;
-        align-self: flex-start;
-        display: inline-block;
     }
 
     .hamburger {
@@ -74,13 +72,10 @@
     }
 
     @media screen and (max-width: $desktopWidth) {
-        .container {
-            position: relative;
-        }
-
         .hamburger {
             display: block;
-            margin-left: 50px;
+            margin-left: 40px;
+            margin-bottom: 3px;
         }
 
         &__menu {
@@ -88,7 +83,7 @@
             width: 100%;
             top: 90px;
             left: 0;
-            padding-bottom: 30px;
+            padding: 5px 15px 30px;
             margin-left: 0;
 
             flex-direction: column;
@@ -100,7 +95,7 @@
 
             button {
                 color: transparent;
-                width: 95%;
+                width: 100%;
             }
         }
 

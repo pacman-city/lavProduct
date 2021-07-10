@@ -25,11 +25,13 @@
     }
 
     @media screen and (max-width: $desktopWidth) {
+        margin-top: 80px;
+
         &__cards {
-            max-width: 710px;
-            margin: 80px auto 0;
-            grid-template-columns: 1fr;
-            grid-row-gap: 30px;
+            margin: 50px auto 0;
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 40px;
+            grid-column-gap: 30px;
         }
 
         &__card {
@@ -42,7 +44,6 @@
 
         span {
             line-height: 1;
-            font-size: 70px;
 
             span {
                 display: none;
@@ -54,13 +55,55 @@
         }
     }
 
-    @media screen and (max-width: $phoneWidth) {
-        span {
-            font-size: 40px;
+    @media screen and (max-width: $tabletWidth) {
+        &__cards {
+            grid-row-gap: 30px;
+            grid-column-gap: 20px;
         }
 
         &__card {
             padding: 15px;
+            align-items: flex-start;
+        }
+
+        span {
+            font-size: 60px;
+            margin-top: -8px;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        margin-top: 60px;
+
+        &__cards {
+            margin-top: 30px;
+            grid-row-gap: 20px;
+            grid-template-columns: 1fr;
+            grid-auto-rows: 1fr;
+        }
+
+        &__card {
+            align-items: center;
+        }
+
+        span {
+            font-size: 70px;
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+        &__card {
+            flex-direction: column;
+        }
+
+        p {
+            max-width: unset;
+            margin: -5px 0 0;
+        }
+
+        span {
+            font-size: 80px;
         }
     }
 }

@@ -1,5 +1,5 @@
 .numerals {
-    margin-top: 105px;
+    margin-top: 100px;
 
     &__wrapper {
         margin: 0 auto;
@@ -11,10 +11,12 @@
     }
 
     h2 {
+        text-align: center;
         @extend %bold57;
     }
 
     p {
+        text-align: center;
         margin-top: 10px;
         @extend %regular20;
     }
@@ -24,24 +26,36 @@
             max-width: 900px;
             grid-template-columns: repeat(4, 200px);
         }
-
-        h2,
-        p {
-            text-align: center;
-        }
     }
 
     @media screen and (max-width: $tabletWidth) {
+        margin-top: 80px;
+
         &__wrapper {
-            max-width: 710px;
-            grid-template-columns: repeat(4, 175px);
+            grid-template: repeat(2, auto) / repeat(2, 330px);
+            gap: 30px;
+
+            div {
+                background: $accentColor3;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border-radius: 5px;
+            }
         }
     }
 
     @media screen and (max-width: $phoneWidth) {
+        margin-top: 60px;
+
         &__wrapper {
             grid-template: repeat(4, 1fr) / 1fr;
             gap: 20px;
+
+            div {
+                padding: 15px;
+            }
         }
     }
 }

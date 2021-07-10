@@ -7,6 +7,8 @@
     box-shadow: 0 10px 50px 0 #674b2415;
     background: $accentColor3;
 
+    // box-shadow: inset 0 -10px 30px 0 #00000001;
+
     &:hover {
         background: $white;
 
@@ -110,5 +112,10 @@
         &__weight {
             margin-right: 75px;
         }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        box-shadow: 0 10px 50px 0 #674b2415,
+            inset 0 0 15px 5px #00000009;
     }
 }

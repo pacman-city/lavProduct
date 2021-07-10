@@ -1,3 +1,6 @@
+import hoverintent from 'hoverintent';
+
+
 const data = {
   "1": {
     "1": {
@@ -281,18 +284,11 @@ const data = {
 };
 
 
-
-
-
-
-
-
 function updateProductCard(itemIndex) {
   let index = itemIndex.split('.');
   const dataObj = data[index[0]][index[1]];
 
   document.querySelector('.product__image-img').style = `background-image: url(${dataObj.image});`;
-
   document.querySelector('[data-info]').innerHTML = `
       <h1>${dataObj.title}</h1>
       <p class="product__name">${dataObj.text}</p>
@@ -321,9 +317,9 @@ function updateProductCard(itemIndex) {
       <h2>Пищевая ценность на 100г продукта</h2>
       <div class="product__nutrients">
         <p>
-          <b>${dataObj.fat}</b>
+          <b data-fat="${parseFloat(dataObj.fat.replace(/,/, '.'))}">${dataObj.fat}</b>
           Жир
-          <button class="product__nutrientsButton">
+          <button class="product__nutrientsButton" type="button">
             <svg width="20" height="20" fill="none">
               <path fill="#E3A156" d="M8.07 12.84a4.5 4.5 0 01-.12-1 2.36 2.36 0 011.12-2.12l.64-.35.32-.18c.63-.34 1.1-.7 1.4-1.07.3-.37.44-.78.44-1.22A2.02 2.02 0 009.8 4.82c-.48 0-.9.11-1.24.32-.34.2-.53.44-.55.7v.06c0 .18.08.28.24.32L7.97 7.3c-.36-.04-.66-.2-.9-.46-.23-.28-.35-.6-.35-.98 0-.42.14-.8.4-1.15.28-.35.65-.62 1.12-.81.47-.2 1-.3 1.59-.3.6 0 1.16.16 1.68.47.5.3.91.71 1.21 1.23.31.52.47 1.08.47 1.68 0 .65-.2 1.24-.61 1.75-.4.5-1.04.98-1.9 1.45-.34.19-.66.4-.98.63-.37.28-.56.66-.56 1.15 0 .21.04.43.11.64l-1.18.24zm.83 2.37a.8.8 0 01-.58-.26.8.8 0 010-1.17.8.8 0 011.17 0 .8.8 0 01.27.6c0 .2-.09.4-.27.57a.81.81 0 01-.6.26z" />
               <circle cx="10" cy="10" r="9.5" stroke="#E3A156" />
@@ -354,7 +350,27 @@ function updateProductCard(itemIndex) {
         </div>
       </div>
   `;
+  document.querySelector('.product__nutrients button').addEventListener('click', () => {
+    const el = document.querySelector('[data-fat]');
+    const value = +el.getAttribute('data-fat');
+    const text = el.innerText.slice(-1);
+
+    switch (text) {
+      case "%":
+        el.innerText = value + " г";
+        break;
+      case "г":
+        el.innerText = parseInt(value * 7.5) + " Ккал";
+        break;
+      case "л":
+        el.innerText = parseInt(value * 27) + " кДж";
+        break;
+      default:
+        el.innerText = value + " %";
+    }
+  })
 }
+
 
 function createProductCards() {
   const departments = document.querySelectorAll('.department__cards');
@@ -365,7 +381,6 @@ function createProductCards() {
 
     for (let j in data[i]) {
       const dataObj = data[i][j];
-      console.log(dataObj);
 
       const card = document.createElement('button');
       card.classList.add('card');
@@ -400,6 +415,22 @@ function createProductCards() {
       sliderButtons.append(button);
     }
   }
+
+
+
+  // var opts = {
+  //   timeout: 500,
+  //   interval: 50
+  // };
+
+  // var el = document.getElementById('element-id');
+  // hoverintent(el,
+  //   function() {
+  //     // Handler in
+  //   },
+  //   function() {
+  //     // Handler out
+  //   }).options(opts);
 };
 
 export {

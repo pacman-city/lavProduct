@@ -54,9 +54,21 @@
         }
     }
 
+    @media screen and (max-width: 1600px) {
+        .icon-logo::before {
+            font-size: 65px;
+        }
+    }
+
     @media screen and (max-width: $desktopWidth) {
         .icon-button-up {
             display: none;
+        }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        .icon-logo::before {
+            font-size: 55px;
         }
     }
 
@@ -76,7 +88,7 @@
         }
 
         .btn-orderCall {
-            margin: 20px 0 20px -10px;
+            margin: 10px 0 10px -10px;
 
             button {
                 align-self: flex-start;

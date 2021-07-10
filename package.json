@@ -19,12 +19,12 @@
         "gulp-plumber": "^1.2.1",
         "gulp-rename": "^2.0.0",
         "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^3.0.0",
         "gulp-uglify": "^3.0.2",
         "gulp-webp": "^4.0.1",
         "panini": "^1.7.1",
         "webpack": "^5.38.1",
-        "webpack-stream": "^6.1.2",
-        "gulp-sourcemaps": "^3.0.0"
+        "webpack-stream": "^6.1.2"
     },
     "browserslist": [
         ">= 1%",
@@ -43,6 +43,7 @@
         "@glidejs/glide": "^3.4.1",
         "axios": "^0.21.4",
         "custom-select": "^1.1.15",
-        "focus-trap": "^6.7.1"
+        "focus-trap": "^6.7.1",
+        "hoverintent": "^2.2.1"
     }
 }

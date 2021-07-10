@@ -3,7 +3,8 @@
 
     .container {
         display: grid;
-        grid-template: auto 1fr / 1fr 700px;
+        grid-template: auto 1fr / 1fr 670px;
+        column-gap: 30px;
         place-items: start;
     }
 
@@ -25,76 +26,89 @@
     li {
         border-bottom: 1px solid #EEDFCD;
         cursor: pointer;
-
         @extend %no-select;
+
+        button {
+            margin: 17px 0 17px -15px;
+            padding: 17px 15px;
+            width: calc(100% + 30px);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            text-align: left;
+            @extend %bold24;
+            user-select: none;
+        }
 
         &.open {
             cursor: default;
 
-            p {
-                height: 90px;
-                visibility: visible;
-                opacity: 1;
+            button {
+                color: $accentColor2;
             }
 
-            .icon-cross {
+            p {
+                height: var(--i);
+            }
+
+            .icon-cross::before {
                 transform: rotate(0deg);
+                transition: transform 0.15s linear 0.1s;
             }
         }
     }
 
-    b {
-        margin: 34px 0;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @extend %bold24;
-        color: $accentColor2;
-
-        user-select: none;
-    }
-
     .icon-cross {
-        margin-left: 90px;
-        transform: rotateZ(45deg);
-        margin-right: 20px;
+        margin-left: 50px;
+        margin-right: 4px;
 
-        transition: transform 0.2s;
+        &::before {
+            display: block;
+            transform: rotateZ(45deg);
+        }
     }
 
     p {
         margin: 0 80px 0 30px;
 
+        overflow: hidden;
         height: 0;
-        padding: 0;
-        visibility: hidden;
 
-        transition: height 0.2s, opacity 0.1s linear 0.1s;
-        opacity: 0;
+        transition: height 0.2s, opacity 0.1s linear 0.1s, padding 0.2s;
 
         @extend %bold20;
         line-height: 1.4;
     }
 
     @media screen and (max-width: $desktopWidth) {
+        margin-top: 110px;
+
+        .container {
+            grid-template: auto 1fr / 350px 1fr;
+        }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
         .container {
             grid-template: 1fr auto auto / 1fr;
+        }
+
+        h2 {
+            padding-bottom: 30px;
+        }
+
+        .btn-solid {
+            margin-top: 40px;
         }
 
         &__accordion {
             grid-area: unset;
         }
-    }
 
-    @media screen and (max-width: $tabletWidth) {
         .icon-cross {
             margin-left: 40px;
-        }
-
-        b {
-            margin: 24px 0;
         }
 
         p {
@@ -103,18 +117,10 @@
     }
 
     @media screen and (max-width: $phoneWidth) {
-        b {
-            margin: 18px 0;
-        }
+        margin-top: 80px;
 
-        li.open p {
-            height: 120px;
-        }
-    }
-
-    @media screen and (max-width: 320px) {
-        li.open p {
-            height: 150px;
+        .btn-solid {
+            margin-top: 30px;
         }
     }
 }

@@ -63,7 +63,7 @@
             padding: 19px 14px;
 
             border-radius: 3px;
-            outline: 1px solid #DDD8D1;
+            border: 1px solid #DDD8D1;
 
             font-family: 'Bellotta Text', sans-serif;
             font-size: 18px;
@@ -110,7 +110,20 @@
         }
     }
 
+    @media screen and (max-width: $xxl) {
+        &__col {
+            margin-top: 100px;
+            padding-bottom: 55px;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+    }
+
     @media screen and (max-width: $desktopWidth) {
+        margin-top: 80px;
+
         .container {
             display: grid;
             grid-template-columns: 1fr 435px;
@@ -118,8 +131,8 @@
         }
 
         &__col {
-            margin-top: 0;
-            padding-bottom: 0;
+            margin-top: 40px;
+            padding-bottom: 0px;
         }
     }
 
@@ -132,8 +145,22 @@
             display: none;
         }
 
-        form {
-            margin: 55px auto 0;
+        &__col {
+            margin-top: 0px;
+
+            >p,
+            h2 {
+                text-align: center;
+                margin: 0 auto;
+            }
         }
+
+        form {
+            margin: 30px auto 0;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        margin-top: 60px;
     }
 }

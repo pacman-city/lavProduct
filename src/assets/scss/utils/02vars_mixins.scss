@@ -8,8 +8,8 @@ $accentColor1: #3521C1;
 $accentColor2: #E3A156;
 $accentColor3: #FAF6EF;
 
-// breakpoints
-$desktopWidth : 1279.98px;
+$xxl: 1400px;
+$desktopWidth : 1199.98px;
 $tabletWidth : 991.98px;
 $phoneWidth : 767.98px;
 $smPhoneWidth : 575.98px;
@@ -18,7 +18,9 @@ $smPhoneWidth : 575.98px;
     // ---------------------------------------------------------------- no select
     user-select: none;
     -webkit-touch-callout: none;
+    touch-callout: none;
     -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
 }
 
 %btn-reset {

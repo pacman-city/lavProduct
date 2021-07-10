@@ -32,9 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ////////////////////////////////////////////////////////////////
   document.querySelector('.requisites').addEventListener('mouseenter', () => {
-    console.log('click');
     document.querySelector('.icon-map-pin').style = "opacity: 0; transition: opacity 1.5s linear";
-  })
+  }, {
+    once: true
+  });
 
   ////////////////////////////////////////////////////////////////
   document.querySelector('.icon-button-up').addEventListener('click', () => {
@@ -164,14 +165,14 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProductCard(this.getAttribute('data-product'));
 
     document.querySelector('main').style.display = 'none';
-    productModal.style.display = 'block';
+    productModal.style.display = '';
 
-    ProductSlider.enable();
+    // ProductSlider.gObject.go(`=1`);
   }));
 
   productCloseButton.addEventListener('click', () => {
     document.querySelector('main').style.display = '';
-    productModal.style.display = '';
+    productModal.style.display = 'none';
     scrollTo({
       left: 0,
       top: windowScroll,
@@ -213,6 +214,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const ProductSlider = new Glide('.product__slider .glide', options1).mount().disable();
+  const ProductSlider = new Glide('.product__slider .glide', options1).mount();
+  setTimeout(() => document.querySelector('.product').style = 'display:none', 50);
+
+  ////////////////////////////////////////////////////////////////
+  // accordion:
+  const ardItems = document.querySelectorAll('.faq__accordion p');
+  const accordion = document.querySelector('.faq__accordion');
+
+  function setHeight() {
+    accordion.style = '';
+    const size = [...ardItems].map(item => {
+      item.style = 'height: unset';
+      const h = item.offsetHeight;
+      item.style = '';
+      return h;
+    });
+    const value = Math.max(...size);
+    console.log(value);
+    accordion.style = `--i:${value + 34}px`;
+  };
+
+  window.addEventListener('resize', () => {
+    setHeight();
+  });
+
+  setHeight();
+
 
 })

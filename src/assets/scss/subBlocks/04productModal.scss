@@ -1,0 +1,398 @@
+.product {
+    overflow-y: auto;
+    position: relative;
+
+    .btn-close {
+        padding: 5px;
+        position: absolute;
+        top: 55px;
+        right: 55px;
+        z-index: 2;
+        color: $textDimmed;
+
+        &:hover {
+            color: $accentColor1;
+        }
+    }
+
+    &__container {
+        height: 100vh;
+        display: grid;
+        grid-template: auto 1fr / 100%;
+    }
+
+    .container {
+        display: grid;
+        column-gap: 100px;
+        grid-template: 1fr / 500px 1fr;
+    }
+
+    &__image {
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            height: 100vh;
+            width: 800%;
+
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            background-color: $accentColor3;
+        }
+    }
+
+    &__image-img {
+        height: 100%;
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: top 60px center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .product__info {
+        padding-bottom: 30px;
+    }
+
+    h1 {
+        margin-top: 120px;
+        max-width: 480px;
+        @extend %bold34;
+    }
+
+    h2 {
+        @extend %bold22;
+    }
+
+    &__name {
+        margin-top: 8px;
+        margin-bottom: 15px;
+        @extend %regular18;
+        color: $text;
+    }
+
+    &__package {
+        padding: 20px 0;
+        margin-bottom: 12px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 50px;
+
+        line-height: 1.8;
+        border-bottom: 1px solid $accentColor3;
+
+        li:nth-child(odd) {
+            @extend %regular18;
+        }
+
+        li:nth-child(even) {
+            @extend %regular18;
+            color: $text;
+        }
+    }
+
+    &__storage {
+        padding-top: 10px;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template: repeat(2, auto) / 170px 170px 190px;
+
+        border-bottom: 1px solid $accentColor3;
+
+        li:nth-child(odd) {
+            @extend %bold20;
+        }
+
+        li:nth-child(even) {
+            font-size: 16;
+            font-weight: 400;
+            color: $textDimmed;
+        }
+    }
+
+    &__nutrients {
+        margin-top: 15px;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 110px 100px 150px auto;
+
+        p {
+            font-size: 16;
+            font-weight: 400;
+            color: $textDimmed;
+        }
+
+        b {
+            display: block;
+            @extend %bold20;
+            color: $black;
+        }
+
+        div {
+            display: flex;
+        }
+
+        div svg {
+            margin: 0 20px;
+        }
+    }
+
+    &__nutrientsButton {
+        vertical-align: bottom;
+
+        svg {
+            margin: 1px;
+        }
+    }
+
+    &__controls {
+        margin-top: 45px;
+    }
+
+    .btn-solid {
+        padding: 17px 30px;
+    }
+
+    .btn-download {
+        margin-left: 45px;
+    }
+
+    &__slider {
+        padding: 0 60px 30px;
+    }
+
+    .glide__track {
+        padding: 0 50px;
+        -webkit-mask-image: linear-gradient(90deg, #fff0 70px, #fff 110px, #fff calc(100% - 110px), #fff0 calc(100% - 70px));
+        mask-image: linear-gradient(90deg, #fff0 70px, #fff 110px, #fff calc(100% - 110px), #fff0 calc(100% - 70px));
+    }
+
+    .glide__slide {
+        margin-top: 10px;
+        padding: 13px;
+
+        @extend %bold18;
+        border: 1px solid $accentColor2;
+        border-radius: 25px;
+
+        &:hover {
+            transition: color 0.05s ease-out, background-color 0.05s ease-out;
+            background-color: $accentColor2;
+            color: $white;
+        }
+    }
+
+    &__sliderControls {
+        margin-top: 3px;
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        pointer-events: none;
+
+    }
+
+    .btn-circle {
+        pointer-events: all;
+    }
+
+    @media screen and (max-width: 1600px) {
+        .container {
+            column-gap: 0;
+            grid-template: 1fr / 400px 1fr;
+        }
+
+        &__image:before {
+            right: 35px;
+            width: 180%;
+        }
+
+        &__image-img {
+            background-position: top 10px left -40px;
+            background-size: 100%;
+        }
+
+        h1 {
+            margin-top: 65px;
+        }
+
+        .btn-download {
+            margin-left: 10px;
+        }
+
+        &__slider {
+            padding: 0 30px 30px;
+        }
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        .btn-close {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            top: 35px;
+            right: 35px;
+        }
+
+        .container {
+            grid-template: 1fr / 350px 1fr;
+        }
+
+        &__image-img {
+            background-position: top -15px left -40px;
+        }
+
+        h1 {
+            margin-top: 30px;
+            max-width: unset;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .container {
+            grid-template: 1fr / 300px 1fr;
+        }
+    }
+
+    @media screen and (max-width: $tabletWidth) {
+        .btn-close {
+            top: 20px;
+            right: 20px;
+        }
+
+        &__container {
+            background-image: linear-gradient($accentColor3 270px, $white 270px);
+        }
+
+        .container {
+            grid-template: 250px auto / 1fr;
+        }
+
+        &__image:before {
+            display: none;
+        }
+
+        &__image-img {
+            background-size: 70%;
+            background-position: center;
+        }
+
+        &__slider {
+            padding: 0 20px 60px;
+        }
+
+        .glide__track {
+            padding: 0 30px;
+            -webkit-mask-image: linear-gradient(90deg, #fff0 45px, #fff 70px, #fff calc(100% - 70px), #fff0 calc(100% - 45px));
+            mask-image: linear-gradient(90deg, #fff0 45px, #fff 70px, #fff calc(100% - 70px), #fff0 calc(100% - 45px));
+        }
+
+        .btn-circle {
+            font-size: 40px;
+        }
+
+        .glide__slide {
+            padding: 10px;
+        }
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+        .container {
+            grid-template: 200px auto / 1fr;
+        }
+
+        &__container {
+            background-image: linear-gradient($accentColor3 215px, $white 215px);
+        }
+
+        .product__info {
+            max-width: 450px;
+        }
+
+        &__image-img {
+            background-size: auto 125%;
+            background-position: center;
+        }
+
+        &__package {
+            grid-template-columns: 100px 1fr;
+            column-gap: 30px;
+            row-gap: 10px;
+        }
+
+        &__storage {
+            grid-template: repeat(3, auto) / 130px 1fr;
+            grid-auto-flow: row;
+
+            li:nth-child(even) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__nutrients {
+            grid-auto-flow: row;
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            >p b {
+                display: inline-block;
+                margin-right: 10px;
+                color: $black;
+            }
+        }
+
+        &__controls {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-solid {
+            margin: 0 auto;
+            padding: 17px 10px;
+        }
+
+        .btn-download {
+            margin: 10px auto 0;
+            display: block;
+        }
+
+        .glide__track {
+            padding: 0;
+            -webkit-mask-image: linear-gradient(90deg, #fff0 10px, #fff 20px, #fff calc(100% - 20px), #fff0 calc(100% - 10px));
+            mask-image: linear-gradient(90deg, #fff0 10px, #fff 20px, #fff calc(100% - 20px), #fff0 calc(100% - 10px));
+        }
+
+        &__sliderControls {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        .container {
+            grid-template: 150px auto / 1fr;
+        }
+
+        &__container {
+            background-image: linear-gradient($accentColor3 170px, $white 170px);
+        }
+
+        &__image-img {
+            margin-right: 20px;
+        }
+    }
+}
