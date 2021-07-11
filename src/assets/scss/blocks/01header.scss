@@ -9,11 +9,11 @@
         height: 100%;
         z-index: 1;
         background-color: rgba(0, 0, 0, 0.22);
-
-        &.open {
-            display: block;
-        }
     }
+}
+
+.header.open+.hamburger-layover {
+    display: block;
 }
 
 .header {
@@ -99,7 +99,7 @@
             }
         }
 
-        &.menu-open {
+        &.open {
             background: $accentColor3;
 
             .header__menu {

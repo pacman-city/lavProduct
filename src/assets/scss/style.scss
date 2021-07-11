@@ -1,6 +1,8 @@
 @import "@glidejs/glide/src/assets/sass/glide.core";
 @import "@glidejs/glide/src/assets/sass/glide.theme";
 
+@import 'swiper/swiper-bundle';
+
 /* Page setups */
 @import './utils/01reset';
 @import './utils/02vars_mixins';

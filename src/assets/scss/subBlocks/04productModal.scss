@@ -1,6 +1,24 @@
 .product {
+    background: $white;
+    height: 100vh;
     overflow-y: auto;
-    position: relative;
+
+    display: none;
+
+    &.open {
+        display: block;
+    }
+
+    &__container {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    &__wrapper {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
 
     .btn-close {
         padding: 5px;
@@ -15,13 +33,24 @@
         }
     }
 
-    &__container {
-        height: 100vh;
-        display: grid;
-        grid-template: auto 1fr / 100%;
+    .swiperProduct {
+        overflow: visible !important;
+
+        .swiper-wrapper {
+            overflow: visible !important;
+        }
+
+        .swiper-slide {
+            overflow: visible !important;
+            background: white;
+        }
+
+        .swiper-slide-visible .product__image:before {
+            background-image: linear-gradient($accentColor3 90%, $white 98%);
+        }
     }
 
-    .container {
+    &__card {
         display: grid;
         column-gap: 100px;
         grid-template: 1fr / 500px 1fr;
@@ -33,14 +62,12 @@
         &:before {
             content: '';
             display: block;
-            height: 100vh;
-            width: 800%;
+            height: calc(100% + 130px);
+            width: 160%;
 
             position: absolute;
             right: 0;
             top: 0;
-
-            background-color: $accentColor3;
         }
     }
 
@@ -59,7 +86,6 @@
 
     h1 {
         margin-top: 120px;
-        max-width: 480px;
         @extend %bold34;
     }
 
@@ -82,7 +108,7 @@
         column-gap: 50px;
 
         line-height: 1.8;
-        border-bottom: 1px solid $accentColor3;
+        border-bottom: 1px solid #ece7e3;
 
         li:nth-child(odd) {
             @extend %regular18;
@@ -101,8 +127,7 @@
         display: grid;
         grid-auto-flow: column;
         grid-template: repeat(2, auto) / 170px 170px 190px;
-
-        border-bottom: 1px solid $accentColor3;
+        border-bottom: 1px solid #ece7e3;
 
         li:nth-child(odd) {
             @extend %bold20;
@@ -119,7 +144,7 @@
         margin-top: 15px;
         display: grid;
         grid-auto-flow: column;
-        grid-template-columns: 110px 100px 150px auto;
+        grid-template-columns: repeat(3, 140px) auto;
 
         p {
             font-size: 16;
@@ -135,19 +160,16 @@
 
         div {
             display: flex;
-        }
+            align-items: center;
 
-        div svg {
-            margin: 0 20px;
+            svg {
+                margin: 0 5px;
+            }
         }
     }
 
     &__nutrientsButton {
-        vertical-align: bottom;
-
-        svg {
-            margin: 1px;
-        }
+        vertical-align: middle;
     }
 
     &__controls {
@@ -162,35 +184,45 @@
         margin-left: 45px;
     }
 
-    &__slider {
-        padding: 0 60px 30px;
+    &__buttons-container {
+        position: relative;
     }
 
-    .glide__track {
-        padding: 0 50px;
-        -webkit-mask-image: linear-gradient(90deg, #fff0 70px, #fff 110px, #fff calc(100% - 110px), #fff0 calc(100% - 70px));
+    .swiperProductButtons {
+        padding-top: 5px;
+        padding-bottom: 40px;
+
+        -webkit-mask-image: linear-gradient(90deg, #fff0 110px, #fff 140px, #fff calc(100% - 140px), #fff0 calc(100% - 110px));
         mask-image: linear-gradient(90deg, #fff0 70px, #fff 110px, #fff calc(100% - 110px), #fff0 calc(100% - 70px));
-    }
 
-    .glide__slide {
-        margin-top: 10px;
-        padding: 13px;
+        .swiper-slide {
+            width: auto;
+            padding: 13px;
+            cursor: pointer;
 
-        @extend %bold18;
-        border: 1px solid $accentColor2;
-        border-radius: 25px;
+            @extend %bold18;
+            @extend %no-select;
+            border: 1px solid $accentColor2;
+            border-radius: 25px;
+            user-select: none;
 
-        &:hover {
-            transition: color 0.05s ease-out, background-color 0.05s ease-out;
-            background-color: $accentColor2;
-            color: $white;
+            &:hover {
+                transition: color 0.05s ease-out, background-color 0.05s ease-out;
+                color: $accentColor1;
+                border-color: $accentColor1;
+            }
+
+            &.swiper-slide-thumb-active {
+                border-color: $accentColor2;
+                background-color: $accentColor2;
+                color: $white;
+            }
         }
     }
 
     &__sliderControls {
-        margin-top: 3px;
+        padding: 0 50px;
         width: 100%;
-        height: 100%;
 
         position: absolute;
         top: 0;
@@ -203,21 +235,30 @@
 
         pointer-events: none;
 
+        .btn-circle {
+            @extend %no-select;
+            height: auto;
+            pointer-events: all;
+            line-height: 1;
+            height: 60px;
+            cursor: pointer;
+
+            &::before,
+            &::after {
+                line-height: 1;
+            }
+        }
     }
 
-    .btn-circle {
-        pointer-events: all;
-    }
-
-    @media screen and (max-width: 1600px) {
-        .container {
+    @media screen and (max-width: $xxl) {
+        &__card {
             column-gap: 0;
             grid-template: 1fr / 400px 1fr;
         }
 
         &__image:before {
             right: 35px;
-            width: 180%;
+            width: 130%;
         }
 
         &__image-img {
@@ -230,11 +271,11 @@
         }
 
         .btn-download {
-            margin-left: 10px;
+            margin-left: 15px;
         }
 
-        &__slider {
-            padding: 0 30px 30px;
+        .btn-solid {
+            padding: 14px 10px;
         }
     }
 
@@ -249,7 +290,7 @@
             right: 35px;
         }
 
-        .container {
+        &__card {
             grid-template: 1fr / 350px 1fr;
         }
 
@@ -259,13 +300,43 @@
 
         h1 {
             margin-top: 30px;
-            max-width: unset;
         }
-    }
 
-    @media screen and (max-width: 1024px) {
-        .container {
-            grid-template: 1fr / 300px 1fr;
+        &__name {
+            margin-top: 0px;
+            margin-bottom: 0;
+        }
+
+        &__storage {
+            grid-template: repeat(2, auto) / 160px 160px 190px;
+        }
+
+        &__nutrients {
+            grid-template-columns: repeat(3, 130px) auto;
+        }
+
+        .swiperProductButtons {
+            -webkit-mask-image: linear-gradient(90deg, #fff0 60px, #fff 100px, #fff calc(100% - 100px), #fff0 calc(100% - 60px));
+            mask-image: linear-gradient(90deg, #fff0 60px, #fff 100px, #fff calc(100% - 100px), #fff0 calc(100% - 60px));
+
+            .swiper-slide {
+                padding: 8px 13px;
+            }
+        }
+
+        &__sliderControls {
+            padding: 0 15px;
+
+            .btn-circle {
+                margin-top: 3px;
+                height: 45px;
+                line-height: 45px;
+
+                &::before,
+                &::after {
+                    font-size: 45px;
+                }
+            }
         }
     }
 
@@ -275,124 +346,134 @@
             right: 20px;
         }
 
-        &__container {
-            background-image: linear-gradient($accentColor3 270px, $white 270px);
+        &__card {
+            grid-template: 200px auto / 1fr;
         }
 
-        .container {
-            grid-template: 250px auto / 1fr;
-        }
+        &__image {
+            margin-top: 20px;
 
-        &__image:before {
-            display: none;
+            &::before {
+                display: none;
+            }
         }
 
         &__image-img {
-            background-size: 70%;
+            background-size: 40%;
             background-position: center;
         }
 
-        &__slider {
-            padding: 0 20px 60px;
+        &__controls {
+            margin-top: 20px;
         }
 
-        .glide__track {
-            padding: 0 30px;
-            -webkit-mask-image: linear-gradient(90deg, #fff0 45px, #fff 70px, #fff calc(100% - 70px), #fff0 calc(100% - 45px));
-            mask-image: linear-gradient(90deg, #fff0 45px, #fff 70px, #fff calc(100% - 70px), #fff0 calc(100% - 45px));
-        }
-
-        .btn-circle {
-            font-size: 40px;
-        }
-
-        .glide__slide {
-            padding: 10px;
+        &__info {
+            max-width: 565px;
+            justify-self: center;
         }
     }
 
     @media screen and (max-width: $phoneWidth) {
-        .container {
-            grid-template: 200px auto / 1fr;
+        &__card {
+            grid-template: 130px auto / 1fr;
         }
 
         &__container {
-            background-image: linear-gradient($accentColor3 215px, $white 215px);
+            background: none;
         }
 
         .product__info {
             max-width: 450px;
+            padding-bottom: 10px;
+        }
+
+        &__image {
+            margin-top: 0px;
         }
 
         &__image-img {
-            background-size: auto 125%;
+            background-size: auto 120%;
             background-position: center;
         }
 
+        h1 {
+            margin-top: 0;
+        }
+
+        h1,
+        &__name {
+            text-align: center;
+        }
+
         &__package {
+            margin-bottom: 0;
+            border: none;
+            padding: 5px 0 10px;
+            line-height: 1.2;
             grid-template-columns: 100px 1fr;
+            align-items: center;
             column-gap: 30px;
-            row-gap: 10px;
+            row-gap: 5px;
         }
 
         &__storage {
+            border-bottom: 0;
+            padding: 5px 0 10px;
+            margin-bottom: 0;
+            align-items: center;
             grid-template: repeat(3, auto) / 130px 1fr;
             grid-auto-flow: row;
-
-            li:nth-child(even) {
-                margin-bottom: 20px;
-            }
+            row-gap: 5px;
         }
 
         &__nutrients {
+            margin-top: 0;
+            padding: 5px 0 10px;
             grid-auto-flow: row;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 5px;
 
             >p b {
                 display: inline-block;
-                margin-right: 10px;
+                width: 125px;
                 color: $black;
+            }
+
+            div {
+                b {
+                    display: inline-block;
+                    margin-right: 2px;
+                    font-weight: 400;
+                    color: $textDimmed;
+                }
+
+                svg {
+                    margin: 0 5px;
+                    height: 23px;
+                }
             }
         }
 
         &__controls {
+            margin-top: 0px;
             display: flex;
             flex-direction: column;
         }
 
         .btn-solid {
             margin: 0 auto;
-            padding: 17px 10px;
+            padding: 12px 10px;
         }
 
         .btn-download {
-            margin: 10px auto 0;
+            margin: 10px auto 20px;
             display: block;
+            padding: 5px 0;
+
         }
 
-        .glide__track {
-            padding: 0;
-            -webkit-mask-image: linear-gradient(90deg, #fff0 10px, #fff 20px, #fff calc(100% - 20px), #fff0 calc(100% - 10px));
-            mask-image: linear-gradient(90deg, #fff0 10px, #fff 20px, #fff calc(100% - 20px), #fff0 calc(100% - 10px));
-        }
-
-        &__sliderControls {
+        &__buttons-container {
             display: none;
-        }
-    }
-
-    @media screen and (max-width: 360px) {
-        .container {
-            grid-template: 150px auto / 1fr;
-        }
-
-        &__container {
-            background-image: linear-gradient($accentColor3 170px, $white 170px);
-        }
-
-        &__image-img {
-            margin-right: 20px;
         }
     }
 }

@@ -44,16 +44,17 @@
         grid-template: auto / auto;
         place-items: center;
 
-        img {
+        img,
+        svg {
             grid-area: 1 / 1 / 2 / 2;
             height: auto;
         }
 
-        img:first-of-type {
+        svg {
             width: 310px;
         }
 
-        img:last-of-type {
+        img {
             width: 192px;
         }
     }
@@ -351,8 +352,6 @@
             align-items: center;
             justify-content: center;
 
-            // outline: 1px solid red;
-
             &:hover::before {
                 opacity: 1;
             }
@@ -389,11 +388,11 @@
         &__image {
             place-self: center;
 
-            img:first-of-type {
+            svg {
                 width: 200px;
             }
 
-            img:last-of-type {
+            img {
                 width: 130px;
             }
         }
@@ -427,11 +426,11 @@
             display: none;
             place-self: center;
 
-            img:first-of-type {
+            svg {
                 width: 200px;
             }
 
-            img:last-of-type {
+            img {
                 width: 130px;
             }
         }

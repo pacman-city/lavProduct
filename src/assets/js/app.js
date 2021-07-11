@@ -1,36 +1,25 @@
 import Glide from '@glidejs/glide';
+import Swiper from 'swiper/swiper-bundle.js';
 
 import Modal from './modules/modal';
-import updateProductCard from './modules/card';
-import {
-  createProductCards
-} from './modules/card';
+
+import renderProductCards from './modules/card';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  createProductCards();
-
-  const hamburgerBtn = document.querySelector('.hamburger');
-  const hamburgerLayover = document.querySelector('.hamburger-layover');
+  // hamburger:
   const header = document.querySelector('.header');
   const toggleMenu = () => {
-    hamburgerBtn.classList.toggle('active');
-    hamburgerLayover.classList.toggle('open');
-    header.classList.toggle('menu-open');
-
-    document.addEventListener('scroll', () => {
-      hamburgerLayover.classList.remove('open');
-      header.classList.remove('menu-open');
-      hamburgerBtn.classList.remove('active');
-      console.log('scroll');
-    }, {
+    header.classList.toggle('open');
+    document.addEventListener('scroll', () => header.classList.remove('open'), {
       once: true
-    })
+    });
   }
-  hamburgerBtn.addEventListener('click', toggleMenu);
-  hamburgerLayover.addEventListener('click', toggleMenu);
+  document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+  document.querySelector('.hamburger-layover').addEventListener('click', toggleMenu);
 
   ////////////////////////////////////////////////////////////////
+  // map:
   document.querySelector('.requisites').addEventListener('mouseenter', () => {
     document.querySelector('.icon-map-pin').style = "opacity: 0; transition: opacity 1.5s linear";
   }, {
@@ -38,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   ////////////////////////////////////////////////////////////////
+  // button up:
   document.querySelector('.icon-button-up').addEventListener('click', () => {
     scrollTo({
       left: 0,
@@ -47,6 +37,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   ////////////////////////////////////////////////////////////////
+  // accordion:
+  const ardItems = document.querySelectorAll('.faq__accordion p');
+  const accordion = document.querySelector('.faq__accordion');
+
+  function setHeight() {
+    accordion.style = '';
+    const size = [...ardItems].map(item => {
+      item.style = 'height: unset';
+      const h = item.offsetHeight;
+      item.style = '';
+      return h;
+    });
+    const value = Math.max(...size);
+    accordion.style = `--i:${value + 34}px`;
+  };
+
+  window.addEventListener('resize', () => setHeight());
+  setHeight();
+
+  // accordion buttons:
   const accordionLinks = document.querySelectorAll('.faq__accordion li');
   const toggleAccordionLinks = function() {
     accordionLinks.forEach(link => (link === this) ? link.classList.add('open') : link.classList.remove('open'));
@@ -55,17 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ////////////////////////////////////////////////////////////////
   // header scroll:
-  const headerScrollArr = ['catalog', 'cooperation', 'question', 'contact'];
-  headerScrollArr.forEach(item => {
-    document.querySelector(`[data-scroll-${item}]`).addEventListener('click', () => {
+  ['catalog', 'cooperation', 'question', 'contact'].forEach(item =>
+    document.querySelector(`[data-scroll-${item}]`).addEventListener('click', () =>
       document.querySelector(`[data-scroll-target-${item}]`).scrollIntoView({
         behavior: "smooth",
-        block: "start"
-      });
-    })
-  })
+      })
+    ));
 
   ////////////////////////////////////////////////////////////////
+  renderProductCards();
+
+  ////////////////////////////////////////////////////////////////
+  // modal:
   new Modal(['commercial', 'partner', 'question', 'call', 'thanks', 'error']);
 
   ////////////////////////////////////////////////////////////////
@@ -134,6 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
     this.classList.add('active');
     sertificateContainer.classList.remove('diploma');
   });
+
+
+
+
   ////////////////////////////////////////////////////////////////
   // modal sertificates:
   let windowScroll;
@@ -152,9 +167,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.addEventListener('focus', (e) => console.log(e.target));
-
+  ////////////////////////////////////////////////////////////////
   // modal-product:
+  const swiperProductButtons = new Swiper(".swiperProductButtons", {
+    freeMode: true,
+    watchSlidesProgress: true,
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    slidesOffsetAfter: 15,
+    slidesOffsetBefore: 15,
+    navigation: {
+      nextEl: ".product-next",
+      prevEl: ".product-prev",
+    },
+    breakpoints: {
+      1200: {
+        slidesOffsetAfter: 90,
+        slidesOffsetBefore: 90,
+        spaceBetween: 30,
+      }
+    }
+  });
+
+  const swiperProduct = new Swiper(".swiperProduct", {
+    slidesPerView: 1,
+    grabCursor: true,
+    effect: "creative",
+    spaceBetween: 1630,
+    keyboard: true,
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: [0, 0, -400],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },
+    thumbs: {
+      swiper: swiperProductButtons,
+    },
+  });
+
   const productButton = document.querySelectorAll('[data-product]');
   const productCloseButton = document.querySelector('.product .btn-close');
   const productModal = document.querySelector('.product');
@@ -162,17 +216,16 @@ document.addEventListener('DOMContentLoaded', () => {
   productButton.forEach(item => item.addEventListener('click', function() {
     windowScroll = window.scrollY;
 
-    updateProductCard(this.getAttribute('data-product'));
+    swiperProduct.slideTo(this.getAttribute('data-product'));
 
     document.querySelector('main').style.display = 'none';
-    productModal.style.display = '';
-
-    // ProductSlider.gObject.go(`=1`);
+    productModal.classList.add('open');
   }));
 
+
   productCloseButton.addEventListener('click', () => {
+    productModal.classList.remove('open');
     document.querySelector('main').style.display = '';
-    productModal.style.display = 'none';
     scrollTo({
       left: 0,
       top: windowScroll,
@@ -180,66 +233,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })
 
-  const options1 = {
-    type: 'slider',
-    rewind: false,
-    startAt: 0,
-    bound: true,
-    perView: 3.9,
-    swipeThreshold: 40,
-    dragThreshold: 80,
-    gap: 30,
-    animationDuration: 300,
-    animationTimingFunc: "ease-out",
-    fucusAt: 'center',
-    breakpoints: {
-      1600: {
-        perView: 3.2
-      },
-      1280: {
-        perView: 2.6
-      },
-      1024: {
-        perView: 2.1
-      },
-      992: {
-        perView: 1.9
-      },
-      768: {
-        perView: 1.5
-      },
-      640: {
-        perView: 1.1
-      }
-    }
-  };
 
-  const ProductSlider = new Glide('.product__slider .glide', options1).mount();
-  setTimeout(() => document.querySelector('.product').style = 'display:none', 50);
 
-  ////////////////////////////////////////////////////////////////
-  // accordion:
-  const ardItems = document.querySelectorAll('.faq__accordion p');
-  const accordion = document.querySelector('.faq__accordion');
 
-  function setHeight() {
-    accordion.style = '';
-    const size = [...ardItems].map(item => {
-      item.style = 'height: unset';
-      const h = item.offsetHeight;
-      item.style = '';
-      return h;
-    });
-    const value = Math.max(...size);
-    console.log(value);
-    accordion.style = `--i:${value + 34}px`;
-  };
 
-  window.addEventListener('resize', () => {
-    setHeight();
-  });
 
-  setHeight();
+
 
 
 })
+
+
+
+// hover intent:
+
+// var opts = {
+//   timeout: 500,
+//   interval: 50
+// };
+
+// var el = document.getElementById('element-id');
+// hoverintent(el,
+//   function() {
+//     // Handler in
+//   },
+//   function() {
+//     // Handler out
+//   }).options(opts);

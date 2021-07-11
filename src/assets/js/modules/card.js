@@ -284,113 +284,126 @@ const data = {
 };
 
 
-function updateProductCard(itemIndex) {
-  let index = itemIndex.split('.');
-  const dataObj = data[index[0]][index[1]];
-
-  document.querySelector('.product__image-img').style = `background-image: url(${dataObj.image});`;
-  document.querySelector('[data-info]').innerHTML = `
-      <h1>${dataObj.title}</h1>
-      <p class="product__name">${dataObj.text}</p>
-
-      <ul class="product__package">
-        <li>Упаковка</li>
-        <li>${dataObj.packageName}</li>
-        <li>Количество в&#160;коробке</li>
-        <li>${dataObj.count}</li>
-        <li>ГОСТ</li>
-        <li>${dataObj.gost} </li>
-        <li>Штрих-код</li>
-        <li>${dataObj.barCode}</li>
-      </ul>
-
-      <h2>Срок хранения</h2>
-      <ul class="product__storage">
-        <li>${dataObj.storageTemp1}</li>
-        <li>${dataObj.storageLength1}</li>
-        <li>${dataObj.storageTemp2}</li>
-        <li>${dataObj.storageLength2}</li>
-        <li>${dataObj.storageTemp3}</li>
-        <li>${dataObj.storageLength3}</li>
-      </ul>
-
-      <h2>Пищевая ценность на 100г продукта</h2>
-      <div class="product__nutrients">
-        <p>
-          <b data-fat="${parseFloat(dataObj.fat.replace(/,/, '.'))}">${dataObj.fat}</b>
-          Жир
-          <button class="product__nutrientsButton" type="button">
-            <svg width="20" height="20" fill="none">
-              <path fill="#E3A156" d="M8.07 12.84a4.5 4.5 0 01-.12-1 2.36 2.36 0 011.12-2.12l.64-.35.32-.18c.63-.34 1.1-.7 1.4-1.07.3-.37.44-.78.44-1.22A2.02 2.02 0 009.8 4.82c-.48 0-.9.11-1.24.32-.34.2-.53.44-.55.7v.06c0 .18.08.28.24.32L7.97 7.3c-.36-.04-.66-.2-.9-.46-.23-.28-.35-.6-.35-.98 0-.42.14-.8.4-1.15.28-.35.65-.62 1.12-.81.47-.2 1-.3 1.59-.3.6 0 1.16.16 1.68.47.5.3.91.71 1.21 1.23.31.52.47 1.08.47 1.68 0 .65-.2 1.24-.61 1.75-.4.5-1.04.98-1.9 1.45-.34.19-.66.4-.98.63-.37.28-.56.66-.56 1.15 0 .21.04.43.11.64l-1.18.24zm.83 2.37a.8.8 0 01-.58-.26.8.8 0 010-1.17.8.8 0 011.17 0 .8.8 0 01.27.6c0 .2-.09.4-.27.57a.81.81 0 01-.6.26z" />
-              <circle cx="10" cy="10" r="9.5" stroke="#E3A156" />
-            </svg>
-          </button>
-        </p>
-        <p>
-          <b>${dataObj.protein}</b>
-          Белок
-        </p>
-        <p>
-          <b>${dataObj.carbohydrates}</b>
-          Углеводы
-        </p>
-
-        <div>
-          <p>
-            <b>${dataObj.calories}</b>
-            Ккал
-          </p>
-          <svg width="12" height="50" viewBox="0 0 13 50">
-            <line x1="12" y1="1" x2="2" y2="48" stroke="#998E88" />
-          </svg>
-          <p>
-            <b>${dataObj.energy}</b>
-            кДж
-          </p>
-        </div>
-      </div>
-  `;
-  document.querySelector('.product__nutrients button').addEventListener('click', () => {
-    const el = document.querySelector('[data-fat]');
-    const value = +el.getAttribute('data-fat');
-    const text = el.innerText.slice(-1);
-
-    switch (text) {
-      case "%":
-        el.innerText = value + " г";
-        break;
-      case "г":
-        el.innerText = parseInt(value * 7.5) + " Ккал";
-        break;
-      case "л":
-        el.innerText = parseInt(value * 27) + " кДж";
-        break;
-      default:
-        el.innerText = value + " %";
-    }
-  })
-}
-
-
-function createProductCards() {
+function renderProductCards() {
+  const swiperProduct = document.querySelector('.swiperProduct .swiper-wrapper');
+  const swiperProductButtons = document.querySelector('.swiperProductButtons .swiper-wrapper');
   const departments = document.querySelectorAll('.department__cards');
-  const sliderButtons = document.querySelector('.product .glide__slides');
 
-  for (let i = 1; i <= 3; i++) {
+  let k = 0;
+
+  for (let i in data) {
     const department = departments[i - 1];
+
+
 
     for (let j in data[i]) {
       const dataObj = data[i][j];
 
+      const slide = document.createElement('div');
+      slide.classList.add('swiper-slide');
+      slide.innerHTML = `
+      <div class="product__card container">
+
+        <div class="product__image">
+          <div class="product__image-img" style="background-image: url(${dataObj.image});"></div>
+        </div>
+
+        <div class="product__info">
+
+          <h1>${dataObj.title}</h1>
+          <p class="product__name">${dataObj.text}</p>
+    
+          <ul class="product__package">
+            <li>Упаковка</li>
+            <li>${dataObj.packageName}</li>
+            <li>Количество в&#160;коробке</li>
+            <li>${dataObj.count}</li>
+            <li>ГОСТ</li>
+            <li>${dataObj.gost} </li>
+            <li>Штрих-код</li>
+            <li>${dataObj.barCode}</li>
+          </ul>
+    
+          <h2>Срок хранения</h2>
+          <ul class="product__storage">
+            <li>${dataObj.storageTemp1}</li>
+            <li>${dataObj.storageLength1}</li>
+            <li>${dataObj.storageTemp2}</li>
+            <li>${dataObj.storageLength2}</li>
+            <li>${dataObj.storageTemp3}</li>
+            <li>${dataObj.storageLength3}</li>
+          </ul>
+    
+          <h2>Пищевая ценность на 100г продукта</h2>
+          <div class="product__nutrients">
+            <p>
+              <b data-fat="${parseFloat(dataObj.fat.replace(/,/, '.'))}">${dataObj.fat}</b>
+              Жир
+              <button class="product__nutrientsButton" type="button">
+                <svg width="22" height="22" fill="none" viewbox="0 0 20 20">
+                  <path fill="#E3A156" d="M8.07 12.84a4.5 4.5 0 01-.12-1 2.36 2.36 0 011.12-2.12l.64-.35.32-.18c.63-.34 1.1-.7 1.4-1.07.3-.37.44-.78.44-1.22A2.02 2.02 0 009.8 4.82c-.48 0-.9.11-1.24.32-.34.2-.53.44-.55.7v.06c0 .18.08.28.24.32L7.97 7.3c-.36-.04-.66-.2-.9-.46-.23-.28-.35-.6-.35-.98 0-.42.14-.8.4-1.15.28-.35.65-.62 1.12-.81.47-.2 1-.3 1.59-.3.6 0 1.16.16 1.68.47.5.3.91.71 1.21 1.23.31.52.47 1.08.47 1.68 0 .65-.2 1.24-.61 1.75-.4.5-1.04.98-1.9 1.45-.34.19-.66.4-.98.63-.37.28-.56.66-.56 1.15 0 .21.04.43.11.64l-1.18.24zm.83 2.37a.8.8 0 01-.58-.26.8.8 0 010-1.17.8.8 0 011.17 0 .8.8 0 01.27.6c0 .2-.09.4-.27.57a.81.81 0 01-.6.26z" />
+                  <circle cx="10" cy="10" r="9.5" stroke="#E3A156" />
+                </svg>
+              </button>
+            </p>
+            <p>
+              <b>${dataObj.protein}</b>
+              Белок
+            </p>
+            <p>
+              <b>${dataObj.carbohydrates}</b>
+              Углеводы
+            </p>
+    
+            <div>
+              <p>
+                <b>${dataObj.calories}</b>
+                Ккал
+              </p>
+              <svg width="13" height="50" viewBox="0 0 13 50" fill="none">
+              <line x1="11.5174" y1="0.103956" x2="1.12181" y2="49.0113" stroke="#998E88"/>
+              </svg>
+              <p>
+                <b>${dataObj.energy}</b>
+                кДж
+              </p>
+            </div>
+          </div>
+
+          <div class="product__controls">
+            <button class="btn-solid" type="button" data-commercial>Получить коммерческое предложение</button>
+            <a class="btn-download" href='./file.pdf' download>
+              <svg viewBox="0 0 24 24">
+                <path fill="#E3A156" d="M22.53 14.95a.95.95 0 00-.96.96v5.66H2.43V15.9a.95.95 0 10-1.91 0v6.62c0 .53.42.95.95.95h21.06c.53 0 .95-.42.95-.95V15.9a.95.95 0 00-.95-.96z" />
+                <path fill="#E3A156" d="M11.33 16.53a.94.94 0 001.35 0l5.82-5.81a.96.96 0 10-1.35-1.36l-4.2 4.19V1.4a.95.95 0 10-1.9 0v12.14l-4.2-4.18A.96.96 0 105.5 10.7l5.83 5.82z" />
+              </svg>
+              Скачать каталог
+            </a>
+          </div>
+
+        </div>
+      </div>
+      `;
+      swiperProduct.append(slide);
+
+
+      // slider buttons:
+      const button = document.createElement('div');
+      button.classList.add('swiper-slide');
+      button.innerHTML = `${dataObj.title} ${dataObj.fat} ${dataObj.weight}`;
+      swiperProductButtons.append(button);
+
+
+      // product cards:
       const card = document.createElement('button');
       card.classList.add('card');
       card.setAttribute('type', 'button');
-      card.setAttribute('data-product', `${i}.${j}`);
+      card.setAttribute('data-product', `${k}`);
       card.innerHTML = `
             <div class="card__btn">
               <div class="icon-btn-plus"></div>
             </div>
-            <img src="${dataObj.image}" alt="butter brick">
+            <img src="${dataObj.image}" width="350px" height="274px" alt="butter brick">
             <h3>${dataObj.title}</h3>
             <p class="card__text">${dataObj.text}</p>
             <p class="card__row">
@@ -404,36 +417,35 @@ function createProductCards() {
               </span>
             </p>
         `;
-
       department.append(card);
 
-      const button = document.createElement('button');
-      button.setAttribute('type', 'button');
-      button.setAttribute('data-product', `${i}.${j}`);
-      button.classList.add('glide__slide');
-      button.innerHTML = `${dataObj.title} ${dataObj.fat} ${dataObj.weight}`;
-      sliderButtons.append(button);
+      k++;
     }
-  }
+  };
 
 
+  // buttons fat:
+  document.querySelectorAll('.product__nutrients button').forEach(item => {
+    item.addEventListener('click', function() {
+      const el = this.previousElementSibling;
+      const value = +el.getAttribute('data-fat');
+      const text = el.innerText.slice(-1);
 
-  // var opts = {
-  //   timeout: 500,
-  //   interval: 50
-  // };
+      switch (text) {
+        case "%":
+          el.innerText = value + " г";
+          break;
+        case "г":
+          el.innerText = parseInt(value * 7.5) + " Ккал";
+          break;
+        case "л":
+          el.innerText = parseInt(value * 27) + " кДж";
+          break;
+        default:
+          el.innerText = value + " %";
+      }
+    })
+  });
+}
 
-  // var el = document.getElementById('element-id');
-  // hoverintent(el,
-  //   function() {
-  //     // Handler in
-  //   },
-  //   function() {
-  //     // Handler out
-  //   }).options(opts);
-};
-
-export {
-  createProductCards
-};
-export default updateProductCard;
+export default renderProductCards;
