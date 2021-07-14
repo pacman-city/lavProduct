@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     effect: "creative",
     spaceBetween: 1630,
     keyboard: true,
+    resistanceRatio: 0.1,
     creativeEffect: {
       prev: {
         shadow: true,

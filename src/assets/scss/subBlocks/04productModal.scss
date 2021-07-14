@@ -33,6 +33,10 @@
         }
     }
 
+    .product__swipe {
+        display: none;
+    }
+
     .swiperProduct {
         overflow: visible !important;
 
@@ -380,6 +384,29 @@
 
         &__container {
             background: none;
+        }
+
+        &__wrapper {
+            .product__swipe {
+                display: block;
+                position: absolute;
+                z-index: 5;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: $textDimmed;
+                width: 120px;
+
+                animation: swipe 0.4s linear forwards 0.6s;
+
+                @keyframes swipe {
+                    to {
+                        transform: translate(-100%, -50%);
+                        opacity: 0;
+                    }
+
+                }
+            }
         }
 
         .product__info {
