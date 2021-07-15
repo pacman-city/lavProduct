@@ -1,13 +1,21 @@
 .sertificate {
     padding: 56px 0;
+    margin: 0 auto;
+
     min-height: 100vh;
     height: 100%;
-
-    margin: 0 auto;
     max-width: 1920px;
-    position: relative;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    background-color: $white;
     display: none;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 
     &.open {
         display: block;
@@ -102,7 +110,6 @@
 
     &__thumbnail-container {
         grid-area: 2 / 1 / -1 / -1;
-        // overflow: hidden;
 
         >div {
             margin: 5px;
@@ -346,7 +353,6 @@
             }
         }
 
-        >div,
         button {
             display: flex;
             align-items: center;
@@ -409,7 +415,7 @@
         &__thumbnails {
             margin-top: 50px;
 
-            >div::before {
+            button::before {
                 opacity: 1;
                 width: 40px;
                 height: 40px;
@@ -443,12 +449,6 @@
 
         &__thumbnails {
             margin-top: 50px;
-
-            >div::before {
-                opacity: 1;
-                width: 40px;
-                height: 40px;
-            }
 
             img {
                 max-height: 155px;
@@ -494,7 +494,7 @@
             margin-top: 30px;
             column-gap: 10px;
 
-            >div::before {
+            button::before {
                 width: 30px;
                 height: 30px;
             }

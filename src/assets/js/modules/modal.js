@@ -45,7 +45,7 @@ class Modal {
   }
 
   onOverlay(e) {
-    (!e.target.closest('.modal__container')) && this.closeModal();
+    (!e.target.closest('[data-modal-body]')) && this.closeModal();
   }
 
   getModals(selectors) {

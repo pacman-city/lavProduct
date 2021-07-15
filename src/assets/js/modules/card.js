@@ -1,6 +1,3 @@
-import hoverintent from 'hoverintent';
-
-
 const data = {
   "1": {
     "1": {

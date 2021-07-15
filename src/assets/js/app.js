@@ -1,8 +1,8 @@
 import Glide from '@glidejs/glide';
 import Swiper from 'swiper/swiper-bundle.js';
+import hoverintent from 'hoverintent';
 
 import Modal from './modules/modal';
-
 import renderProductCards from './modules/card';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     accordion.style = `--i:${value + 34}px`;
   };
 
-  window.addEventListener('resize', () => setHeight());
   setHeight();
+  window.addEventListener('resize', setHeight);
 
   // accordion buttons:
   const accordionLinks = document.querySelectorAll('.faq__accordion li');
@@ -73,15 +73,84 @@ document.addEventListener('DOMContentLoaded', () => {
     ));
 
   ////////////////////////////////////////////////////////////////
+
   renderProductCards();
+  new Modal(['commercial', 'partner', 'question', 'call', 'sertificate', 'product', 'thanks', 'error']);
 
   ////////////////////////////////////////////////////////////////
-  // modal:
-  new Modal(['commercial', 'partner', 'question', 'call', 'thanks', 'error']);
+  // modal-product:
+  const swiperProductButtons = new Swiper(".swiperProductButtons", {
+    freeMode: true,
+    watchSlidesProgress: true,
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    slidesOffsetAfter: 15,
+    slidesOffsetBefore: 15,
+    navigation: {
+      nextEl: ".product-next",
+      prevEl: ".product-prev",
+    },
+    breakpoints: {
+      1200: {
+        slidesOffsetAfter: 90,
+        slidesOffsetBefore: 90,
+        spaceBetween: 30,
+      }
+    }
+  });
 
-  ////////////////////////////////////////////////////////////////
+  const swiperProduct = new Swiper(".swiperProduct", {
+    slidesPerView: 1,
+    grabCursor: true,
+    effect: "creative",
+    spaceBetween: 1630,
+    keyboard: true,
+    resistanceRatio: 0.1,
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: [0, 0, -400],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },
+    thumbs: {
+      swiper: swiperProductButtons,
+    },
+  });
+  // move slider to selected product card:
+  document.querySelectorAll('[data-product]').forEach(item => item.addEventListener('click', function() {
+    swiperProduct.slideTo(this.getAttribute('data-product'));
+  }));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   document.querySelectorAll('.sertificate__modal').forEach(item => addSertificateSliders(item));
-
   const sertificateDiploma = document.querySelector('.sertificate__thumbnail-container div');
   const options = {
     type: 'carousel',
@@ -132,6 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+
+
   const sertificateContainer = document.querySelector('.sertificate__thumbnail-container');
   const sertificatesButtons = document.querySelectorAll('.sertificate__buttons button');
 
@@ -149,90 +220,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  ////////////////////////////////////////////////////////////////
-  // modal sertificates:
-  let windowScroll;
-  document.querySelector('.licence button').addEventListener('click', () => {
-    windowScroll = window.scrollY;
-    document.querySelector('main').style.display = "none";
-    document.querySelector('.sertificate').classList.add('open');
-  });
-  document.querySelector('.sertificate__container >.btn-close').addEventListener('click', () => {
-    document.querySelector('main').style = "";
-    document.querySelector('.sertificate').classList.remove('open');
-    scrollTo({
-      left: 0,
-      top: windowScroll,
-      behavior: 'instant'
-    });
-  });
-
-  ////////////////////////////////////////////////////////////////
-  // modal-product:
-  const swiperProductButtons = new Swiper(".swiperProductButtons", {
-    freeMode: true,
-    watchSlidesProgress: true,
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    slidesOffsetAfter: 15,
-    slidesOffsetBefore: 15,
+  const swiperSertificate = new Swiper(".swiperSertificate", {
     navigation: {
-      nextEl: ".product-next",
-      prevEl: ".product-prev",
+      nextEl: ".swiperSertificate-next",
+      prevEl: ".swiperSertificate-prev",
     },
-    breakpoints: {
-      1200: {
-        slidesOffsetAfter: 90,
-        slidesOffsetBefore: 90,
-        spaceBetween: 30,
-      }
-    }
-  });
-
-  const swiperProduct = new Swiper(".swiperProduct", {
-    slidesPerView: 1,
-    grabCursor: true,
-    effect: "creative",
-    spaceBetween: 1630,
-    keyboard: true,
-    resistanceRatio: 0.1,
-    creativeEffect: {
-      prev: {
-        shadow: true,
-        translate: [0, 0, -400],
-      },
-      next: {
-        translate: ["100%", 0, 0],
-      },
-    },
-    thumbs: {
-      swiper: swiperProductButtons,
-    },
-  });
-
-  const productButton = document.querySelectorAll('[data-product]');
-  const productCloseButton = document.querySelector('.product .btn-close');
-  const productModal = document.querySelector('.product');
-
-  productButton.forEach(item => item.addEventListener('click', function() {
-    windowScroll = window.scrollY;
-
-    swiperProduct.slideTo(this.getAttribute('data-product'));
-
-    document.querySelector('main').style.display = 'none';
-    productModal.classList.add('open');
-  }));
-
-
-  productCloseButton.addEventListener('click', () => {
-    productModal.classList.remove('open');
-    document.querySelector('main').style.display = '';
-    scrollTo({
-      left: 0,
-      top: windowScroll,
-      behavior: 'instant'
-    });
   })
+
+  swiperSertificate.disable();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
